@@ -31,11 +31,11 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
-            - name: PAYSTACK_KEY_TEST
-              valueFrom:
-                secretKeyRef:
-                  name: paystack-secret-test
-                  key: PAYSTACK_KEY_TEST
+            # - name: PAYSTACK_KEY_TEST
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: paystack-secret-test
+            #       key: PAYSTACK_KEY_TEST
 ---
 apiVersion: v1
 kind: Service
