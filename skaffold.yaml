@@ -19,7 +19,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/rentwise-dev-289221/client
+    - image: dimeji45/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -27,7 +27,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: us.gcr.io/rentwise-dev-289221/plan
+    - image: dimeji45/plan
       context: plan
       docker:
         dockerfile: Dockerfile
@@ -35,7 +35,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: us.gcr.io/rentwise-dev-289221/orders
+    - image: dimeji45/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -43,7 +43,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: us.gcr.io/rentwise-dev-289221/expiration
+    - image: dimeji45/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -51,7 +51,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: us.gcr.io/rentwise-dev-289221/subscription
+    - image: dimeji45/subscription
       context: subscription
       docker:
         dockerfile: Dockerfile

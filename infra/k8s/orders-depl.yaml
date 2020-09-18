@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: us.gcr.io/rentwise-dev-289221/orders
+          image: dimeji45/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
