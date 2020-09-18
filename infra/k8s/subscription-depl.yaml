@@ -36,6 +36,11 @@ spec:
                 secretKeyRef:
                   name: paystack-secret-test
                   key: PAYSTACK_KEY_TEST
+            - name: SEND_GRID
+              valueFrom:
+                secretKeyRef:
+                  name: send-grid-secret
+                  key: SEND_GRID
 ---
 apiVersion: v1
 kind: Service
