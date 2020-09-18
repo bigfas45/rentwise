@@ -1,0 +1,13 @@
+name: tests-plan
+
+on:
+  pull_request:
+    paths:
+      - 'plan/**'
+
+jobs:
+  build:  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd plan && npm install
