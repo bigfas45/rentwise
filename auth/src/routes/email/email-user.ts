@@ -5,7 +5,7 @@ import {User} from '../../models/user'
 
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(
-  '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'
+    process.env.SEND_GRID
 );
 
 export const emailP = async (req: Request, res: Response, next: NextFunction) => {
