@@ -1,0 +1,26 @@
+/* ------------------------------------------------
+  Project:   Softino - Software Landing Page HTML5 Template
+  Author:    ThemeHt
+
+  NOTE: This is Color customizer stylesheet of template.
+------------------------------------------------ */
+
+
+.color-customizer {z-index: 10000; right: -250px; width: 250px; position: fixed; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); box-shadow: -3px 0 50px -2px rgba(0, 0, 0, 0.14);}
+.color-customizer .color-button {text-align: center; display: inline-block; z-index: 2; position: absolute; background: #fff; width: 100%; }
+.color-customizer .color-chooser {padding: 20px; background-color: #ffffff; -webkit-box-shadow: 0 20px 40px 0 rgba(28, 30, 35, 0.2); -moz-box-shadow: 0 20px 40px 0 rgba(28, 30, 35, 0.2); box-shadow: 0 20px 40px 0 rgba(28, 30, 35, 0.2);}
+.color-customizer.opened .color-chooser { opacity: 1; }
+.color-customizer a.opener {display: block; height: 45px; background: #2575fc; border-top-left-radius: 5px; border-bottom-left-radius: 5px; width: 45px; font-size: 24px; line-height: 45px; color: #ffffff;  position: absolute; right: 250px; top: 0; text-align: center; text-decoration: none;-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);}
+.color-customizer.opened a.opener { left: -45px; border-color: transparent; }
+.color-customizer ul { list-style: none; margin: 0; padding: 0; font-size: 0; }
+.color-customizer ul li {width: 50px; height: 50px; border-radius: 7px; float: left; position: relative; display: inline-block; cursor: pointer; margin: 10px 10px 10px 10px; -webkit-transition: all linear 0.5s; -moz-transition: all linear 0.5s; -o-transition: all linear 0.5s; -ms-transition: all linear 0.5s; transition: all linear 0.5s; }
+.color-customizer ul li:nth-child(3n+3){margin-right: 0;}
+.color-customizer ul li.selected{-webkit-box-shadow: 0 0px 30px rgba(0,0,0,0.70); -moz-box-shadow: 0 0px 30px rgba(0,0,0,0.70); box-shadow: 0 0px 30px rgba(0,0,0,0.70);}
+
+.color-customizer .theme-default {background: #2575fc;}
+.color-customizer .theme-2 {background: #00c9ff;}
+.color-customizer .theme-3 {background: #FF512F;}
+.color-customizer .theme-4 {background: #ee1f71;}
+.color-customizer .theme-5 {background: #05f8a1;}
+.color-customizer .theme-6 {background: #481ea7;}

@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title>Crypto Dashboard | DashLite Admin Template</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="./assets/css/dashlite.css?ver=1.8.0">
+    <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=1.8.0">
+    
+    <style type="text/css">
+        @media (max-width: 768px) {
+            .carousel-inner .carousel-item > div {
+            display: none;
+            }
+            .carousel-inner .carousel-item > div:first-child {
+            display: block;
+            }
+        }
+
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+
+        /* display 3 */
+        @media (min-width: 768px) {
+            
+            .carousel-inner .carousel-item-right.active,
+            .carousel-inner .carousel-item-next {
+              transform: translateX(33.333%);
+            }
+            
+            .carousel-inner .carousel-item-left.active, 
+            .carousel-inner .carousel-item-prev {
+              transform: translateX(-33.333%);
+            }
+        }
+
+        .carousel-inner .carousel-item-right,
+        .carousel-inner .carousel-item-left{ 
+          transform: translateX(0);
+        }
+    </style>
+
+</head>
+
+<body class="nk-body npc-crypto bg-white has-sidebar ">
+
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+             <!-- sidebar @s -->
+            <div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-sidebar-brand">
+                        <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo">
+                            <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
+                            <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                           
+                        </a>
+                    </div>
+                    <div class="nk-menu-trigger mr-n2">
+                      
+                    </div>
+                </div><!-- .nk-sidebar-element -->
+                <div class="nk-sidebar-element">
+                    <div class="nk-sidebar-body" data-simplebar>
+                        <div class="nk-sidebar-content">
+                            <div class="nk-sidebar-widget d-none d-xl-block">
+                                
+                               
+                            </div><!-- .nk-sidebar-widget -->
+                            <div class="nk-sidebar-widget nk-sidebar-widget-full d-xl-none pt-0">
+                                
+                            </div><!-- .nk-sidebar-widget -->
+
+                            <div class="nk-sidebar-menu">
+                                <!-- Menu -->
+                                <ul class="nk-menu">
+                                    
+                                    <li class="nk-menu-item">
+                                        <a href="html/dashboard.html" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                                            <span class="nk-menu-text">Home</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nk-menu-item">
+                                        <a href="html/plan.html" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-report-profit"></em></span> 
+                                            <span class="nk-menu-text">Plans</span>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="nk-menu-item">
+                                        <a href="html/accounts.html" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-user-c"></em></span>
+                                            <span class="nk-menu-text">My Account</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nk-menu-item">
+                                            <a href="html/history.html" class="nk-menu-link">
+                                                <span class="nk-menu-icon">
+                                                <em class="icon ni ni-histroy"></em></span>
+                                                <span class="nk-menu-text">History</span>
+                                            </a>
+                                        </li>                               
+                                    
+                                    <!--  -->
+                                </ul>
+                            </div><!-- .nk-sidebar-widget -->
+                            
+                        </div><!-- .nk-sidebar-content -->
+                    </div><!-- .nk-sidebar-body -->
+                </div><!-- .nk-sidebar-element -->
+            </div>
+            <!-- sidebar @e -->
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-header nk-header-fluid nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ml-n1">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+                            </div>
+                            <div class="nk-header-brand d-xl-none">
+                                <h3 style="margin-left:40px">Account Overview</h3>
+                            </div>
+
+                            <div class="nk-header-news d-none d-xl-block">  
+                                <h3 style="margin-left: 260px">Account Overview</h3>
+                            </div>
+
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <li class="dropdown user-dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar sm">
+                                                    <em class="icon ni ni-user-alt"></em>
+                                                </div>
+                                                
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1">
+                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                
+                                            </div>
+                                          
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main header @e -->
+                <!-- content @s -->
+                <div class="nk-content nk-content-fluid">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-content-body">
+                            <div class="nk-block-head">
+                                <div class="nk-block-head-sub"><span>Total Balance</span>
+                                </div>
+                                
+                                <div class="nk-block-between-md g-4">
+                                    <div class="nk-block-head-content">
+                                        <h3 class="nk-block-title fw-normal">₦ <strong>0</strong>.00</h3>
+                                        <div class="nk-block-des">
+                                            
+                                        </div>
+                                    </div><!-- .nk-block-head-content -->
+                                    
+                                </div><!-- .nk-block-between -->
+                            </div><!-- .nk-block-head -->
+                            
+                            <h2 class="nk-block-title title" style="color: #7f8dff;">Get Started
+                            </h2>
+                           
+                            <div class="nk-block nk-block-lg">
+                                    <div class="container text-center my-3">
+                                    
+                                    <div class="row mx-auto my-auto">
+                                    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+
+                                            <div class="carousel-inner w-100" role="listbox">
+
+                                                <div class="carousel-item active">
+                                                    <div class="col-md-4">
+                                                        <div class="card card-body">
+                                                            
+                                                            <a href="html/plan.html">
+
+                                                            <div class="card bg-light" style="background-color:white!important;  border-radius: 10px;border: 1px solid #c4cefe; margin-bottom: 5px; height:25%;width:100%">
+                                                                <div class="card-inner">
+
+                                                                    <h5 class="card-title">
+                                                                    <img  src="./assets/newsavings.svg"  alt="image2"  height="40" width="40">
+                                                                    </h5>
+                                                                    <br>
+                                                                                       
+                                                                    
+                                                                    <p class="card-text">New Saving Plan</p>
+                                                                    <!-- Members of the pool agree on amount & duration (minimum 6 months) -->
+                                                                    <!-- <a href="#" class="card-link">2</a>
+                                                                    <a href="#" class="card-link">3</a> -->
+                                                                </div>
+                                                            </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="carousel-item">
+                                                     <div class="col-md-4">
+                                                        <div class="card card-body">
+                                                            
+                                                            <a href="html/goals.html">
+
+                                                                <div class="card bg-light" style="background-color:white!important;  border-radius: 10px;border: 1px solid #c4cefe; margin-bottom: 5px; height:25%;width:100%">
+                                                                <div class="card-inner">
+
+                                                                    <h5 class="card-title">
+                                                                    <img  src="./assets/goals.svg"  alt="image2"  height="40" width="40">
+                                                                    </h5>
+                                                                    <br>
+                                                                                       
+                                                                    
+                                                                    <p class="card-text">Create Life Goals</p>
+                                                                    <!-- Members of the pool agree on amount & duration (minimum 6 months) -->
+                                                                    <!-- <a href="#" class="card-link">2</a>
+                                                                    <a href="#" class="card-link">3</a> -->
+                                                                </div>
+                                                                </div>
+
+                                                            </a>
+                                                        </div>
+                                                        </div>
+                                                </div>
+
+                                                <div class="carousel-item">
+                                                     <div class="col-md-4">
+                                                        <div class="card card-body">
+                                                            
+                                                            <a href="html/mutualfriends.html">
+                                                            <div class="card bg-light" style="background-color:white!important;  border-radius: 10px;border: 1px solid #c4cefe; margin-bottom: 5px; height:25%;width:100%">
+                                                                <div class="card-inner">
+
+                                                                    <h5 class="card-title">
+                                                                    <img  src="./assets/mutual.svg" style="color: blue!important" alt="image2"  height="40" width="40">
+                                                                    </h5>
+                                                                    <br>
+                                                                                       
+                                                                    <p class="card-text">Invest with Mutual Friends</p>
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        </div>
+                                                        </div>
+                                                </div>
+
+                                                
+
+                                                <div class="carousel-item">
+                                                     <div class="col-md-4">
+                                                        <div class="card card-body">
+                                                            <a href="html/emergencyfunds.html">
+                                                            <div class="card bg-light" style="background-color:white!important;  border-radius: 10px;border: 1px solid #c4cefe; margin-bottom: 5px; height:25%;width:100%">
+                                                                <div class="card-inner">
+
+                                                                    <h5 class="card-title">
+                                                                    <img  src="./assets/emergencyfunds.svg"  alt="image2"  height="40" width="40">
+                                                                    </h5>
+                                                                    <br>
+                                                                                       
+                                                                    <p class="card-text">Build Emergency Funds</p>
+                                                                    <!-- Members of the pool agree on amount & duration (minimum 6 months) -->
+                                                                    <!-- <a href="#" class="card-link">2</a>
+                                                                    <a href="#" class="card-link">3</a> -->
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon"  style = "background-color: #7f8dff!important" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+
+                                            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" style = "background-color: #7f8dff!important;" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                    </div>
+                                    </div>
+        
+                                    </div>
+
+                            </div>   
+
+                            <div class="nk-block nk-block-lg">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+                <!-- footer @s -->
+                <div class="nk-footer nk-footer-fluid">
+                    <div class="container-fluid">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright"> &copy; 2020 DashLite. Template by <a href="#">Softnio</a>
+                            </div>
+                            <div class="nk-footer-links">
+                                <ul class="nav nav-sm">
+                                    <li class="nav-item"><a class="nav-link" href="html/terms.html">Terms</a></li>
+                                    
+                                    <li class="nav-item"><a class="nav-link" href="html/howitworks.html">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer @e -->
+            </div>
+            <!-- wrap @e -->
+                
+            
+        </div>
+        <!-- main @e -->
+    </div>
+
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="./assets/js/bundle.js?ver=1.8.0"></script>
+    <script src="./assets/js/scripts.js?ver=1.8.0"></script>
+    <script src="html/file.js">
+    </script>
+    
+    
+</body>
+
+</html>

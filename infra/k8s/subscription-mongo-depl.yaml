@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subscription-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subscription-mongo
+  template:
+    metadata:
+      labels:
+        app: subscription-mongo
+    spec:
+      containers:
+        - name: subscription-mongo
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscription-mongo-srv
+spec:
+  selector:
+    app: subscription-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

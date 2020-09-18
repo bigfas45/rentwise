@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subscription-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subscription
+  template:
+    metadata:
+      labels:
+        app: subscription
+    spec:
+      containers:
+        - name: subscription
+          image: us.gcr.io/rentwise-dev-289221/subscription
+          env:
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: 'http://nats-srv:4222'
+            - name: NATS_CLUSTER_ID
+              value: rentwise
+            - name: MONGO_URI
+              value: 'mongodb://subscription-mongo-srv:27017/subscription'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+            - name: PAYSTACK_KEY_TEST
+              valueFrom:
+                secretKeyRef:
+                  name: paystack-secret-test
+                  key: PAYSTACK_KEY_TEST
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscription-srv
+spec:
+  selector:
+    app: subscription
+  ports:
+    - name: subscription
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
