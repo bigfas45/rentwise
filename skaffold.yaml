@@ -11,7 +11,7 @@ build:
   googleCloudBuild:
     projectId: rentwise-dev-289221
   artifacts:
-    - image: us.gcr.io/rentwise-dev-289221/auth
+    - image: dimeji45/auth
       context: auth
       docker:
         dockerfile: Dockerfile
