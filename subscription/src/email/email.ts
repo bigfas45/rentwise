@@ -1,18 +1,16 @@
 // require on top
 import express, { Request, Response, NextFunction } from 'express';
 import { BadRequestError } from '@rentwise/common';
-import {User} from '../../models/user'
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(
-  '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'
-);
+sgMail.setApiKey(process.env.SEND_GRID);
 
-export const email = async (req: Request, res: Response, next: NextFunction) => {
+export const email = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const { email, firstname, lastname } = req.body;
-
-  
-
 
   const emailData = {
     to: `${email}`, // admin
@@ -115,11 +113,11 @@ export const email = async (req: Request, res: Response, next: NextFunction) => 
             </html>
             
            
-        `
+        `,
   };
   sgMail
     .send(emailData) //@ts-ignore
-    .then(sent => console.log('SENT >>>')) //@ts-ignore
-    .catch(err => console.log('ERR >>>', err));
+    .then((sent) => console.log('SENT >>>')) //@ts-ignore
+    .catch((err) => console.log('ERR >>>', err));
   next();
 };

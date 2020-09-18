@@ -31,6 +31,11 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
+            - name: SEND_GRID
+              valueFrom:
+                secretKeyRef:
+                  name: send-grid-secret
+                  key: SEND_GRID
 
 ---
 apiVersion: v1
