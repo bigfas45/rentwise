@@ -2,6 +2,8 @@ name: tests-plan
 
 on:
   pull_request:
+    paths:
+      - 'plan/**'
 
 jobs:
   build:  
