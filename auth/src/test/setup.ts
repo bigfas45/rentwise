@@ -2,6 +2,7 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import request from 'supertest';
 import { app } from '../app';
+import { validateRequest, BadRequestError,VerificationStatus } from '@rentwise/common';
 
 declare global {
   namespace NodeJS {
@@ -38,6 +39,8 @@ afterAll(async () => {
 });
 
 global.signin = async () => {
+  const expiration = new Date();
+  expiration.setSeconds(expiration.getSeconds() + 60 * 60);
   const response = await request(app)
     .post('/api/users/signup')
     .send({
@@ -47,7 +50,8 @@ global.signin = async () => {
       userType: '1',
       firstname: 'Dimeji',
       lastname: 'Fasina',
-      pin: '1234'
+      expiresAt: expiration,
+      verification: VerificationStatus.Unverified
     })
     .expect(201);
 

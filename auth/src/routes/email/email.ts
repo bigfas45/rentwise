@@ -117,9 +117,9 @@ export const email = async (req: Request, res: Response, next: NextFunction) => 
            
         `
   };
-  sgMail
+  await  sgMail
     .send(emailData) //@ts-ignore
     .then(sent => console.log('SENT >>>')) //@ts-ignore
-    .catch(err => console.log('ERR >>>', err));
+    .catch(err => console.log('ERR >>>'));
   next();
 };
