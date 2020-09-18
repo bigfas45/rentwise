@@ -9,13 +9,10 @@ import Skeleton from 'react-loading-skeleton';
 const LandingPage = ({ currentuser }) => {
   const router = useRouter();
 
-
   const body = () => {
     return (
       <Fragment>
         <div>
-     
-
           <section className="fullscreen-banner banner p-0">
             <div className="align-center pt-0">
               <div className="container">
@@ -418,9 +415,9 @@ const LandingPage = ({ currentuser }) => {
   return (
     <Fragment>
       <Layout title="Home" />
-      <Header currentuser={currentuser} title="RentWise | Home" />
+      <Header currentuser={currentuser} title="RentWise | Home." />
       {body()}
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };
