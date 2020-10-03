@@ -14,8 +14,8 @@ const Footer = () => {
       },
       onSuccess: (email) => {
         setSuccess(
-          <div class="alert alert-icon alert-success" role="alert">
-            <em class="icon ni ni-alert-circle"></em>
+          <div className="alert alert-icon alert-success" role="alert">
+            <em className="icon ni ni-alert-circle"></em>
             <strong>You requested has been submited </strong>.Cheers!!!.
           </div>
         );
@@ -27,30 +27,30 @@ const Footer = () => {
       doRequest();
     };
     return (
-      <div class="subscribe-box">
-        <div class="container">
-          <div class="row subscribe-inner align-items-center">
-            <div class="col-md-6 col-sm-12">
+      <div className="subscribe-box">
+        <div className="container">
+          <div className="row subscribe-inner align-items-center">
+            <div className="col-md-6 col-sm-12">
               <h4>Subscribe Our Newsletter</h4>
-              <p class="lead mb-0">
+              <p className="lead mb-0">
                 Get started for 1 Month free trial No Purchace required.
               </p>
             </div>
-            <div class="col-md-6 col-sm-12 sm-mt-2">
-              <div class="subscribe-form sm-mt-2">
-                <form onSubmit={onSubmit} id="mc-form" class="group">
+            <div className="col-md-6 col-sm-12 sm-mt-2">
+              <div className="subscribe-form sm-mt-2">
+                <form onSubmit={onSubmit} id="mc-form" className="group">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     name="EMAIL"
-                    class="email"
+                    className="email"
                     id="mc-email"
                     placeholder="Email Address"
                     required=""
                   />
                   {/* <input
-                  class="btn btn-theme"
+                  className="btn btn-theme"
                   type="submit"
                   name="subscribe"
                   value="Subscribe"
@@ -72,7 +72,7 @@ const Footer = () => {
                     </Button>
                   ) : (
                     <input
-                      class="btn btn-theme"
+                      className="btn btn-theme"
                       type="submit"
                       name="subscribe"
                       value="Subscribe"
@@ -109,50 +109,29 @@ const Footer = () => {
                 <div className="footer-logo">
                   <img
                     id="footer-logo-white-img"
-                    src="/assets/landing/assets/images/logo-customizer-white/logo-color-5.png"
+                    src="/assets/images/rentWise.PNG"
                     className="img-center"
                     alt=""
                   />
                 </div>
                 <p className="mb-0">
-                  Softino Software Landing Page Is fully responsible, Build
-                  whatever you like with the Softino, Softino is the creative,
-                  modern HTML5 Template suitable for Your business.
+                  RentWise (formerly rentwise.ng) is the largest online savings
+                  & investing platform in Nigeria. For over 4 years, our
+                  customers have saved and invested billions of Naira that they
+                  would normally be tempted to spend.
                 </p>
               </div>
               <div className="col-lg-4 col-md-6 pl-md-5 sm-mt-5 footer-list justify-content-between d-flex">
                 <ul className="list-unstyled w-100">
                   <li>
-                    <a href="about-us.html">About Us</a>
+                    <a href="/aboutus">About Us</a>
                   </li>
                   <li>
-                    <a href="services.html">Service</a>
+                    <a href="/plans">Plans</a>
                   </li>
+
                   <li>
-                    <a href="team.html">Team</a>
-                  </li>
-                  <li>
-                    <a href="team-single.html">Team Single</a>
-                  </li>
-                  <li>
-                    <a href="contact.html">Contact Us</a>
-                  </li>
-                </ul>
-                <ul className="list-unstyled w-100">
-                  <li>
-                    <a href="blog-right-sidebar.html">Blog</a>
-                  </li>
-                  <li>
-                    <a href="faq.html">Faq</a>
-                  </li>
-                  <li>
-                    <a href="error-404.html">Error 404</a>
-                  </li>
-                  <li>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="terms-and-conditions.html">Terms</a>
+                    <a href="/contact">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -160,27 +139,27 @@ const Footer = () => {
                 <ul className="media-icon list-unstyled">
                   <li>
                     <p className="mb-0">
-                      Address: <b>423B, Road Wordwide Country, USA</b>
+                      Address: <b>Suite D5, Innovation plaza Wuye Abuja</b>
                     </p>
                   </li>
                   <li>
                     Email:{' '}
                     <a href="mailto:themeht23@gmail.com">
-                      <b>themeht23@gmail.com</b>
+                      <b>info@rentwise.ng</b>
                     </a>
                   </li>
                   <li>
                     Phone:{' '}
                     <a href="tel:+912345678900">
-                      <b>+91-234-567-8900</b>
+                      <b>0802 366 3846</b>
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     Fax:{' '}
                     <a href="tel:+912345678900">
                       <b>+91-234-567-8900</b>
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -193,9 +172,9 @@ const Footer = () => {
                 <div className="col-lg-6 col-md-12">
                   {' '}
                   <span>
-                    Copyright 2019 Softino Theme by{' '}
+                    Copyright 2020 RentWise Theme by{' '}
                     <u>
-                      <a href="#">ThemeHt</a>
+                      <a href="#">rentwise</a>
                     </u>{' '}
                     | All Rights Reserved
                   </span>

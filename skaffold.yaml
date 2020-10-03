@@ -4,14 +4,15 @@ deploy:
   kubectl:
     manifests:
       - ./infra/k8s/*
-      - ./infra/k8s-dev/*
+      # - ./infra/k8s/*
+      # - ./infra/k8s-dev/*
 build:
   # local:
   #   push: false
   googleCloudBuild:
     projectId: rentwise-dev-289221
   artifacts:
-    - image: dimeji45/auth
+    - image: dimeji45 /auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -19,7 +20,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: dimeji45/client
+    - image: dimeji45 /client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -27,7 +28,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: dimeji45/plan
+    - image: dimeji45 /plan
       context: plan
       docker:
         dockerfile: Dockerfile
@@ -35,7 +36,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: dimeji45/orders
+    - image: dimeji45 /orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -43,7 +44,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: dimeji45/expiration
+    - image: dimeji45 /expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -51,7 +52,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: dimeji45/subscription
+    - image: dimeji45 /subscription
       context: subscription
       docker:
         dockerfile: Dockerfile
@@ -59,4 +60,3 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-            

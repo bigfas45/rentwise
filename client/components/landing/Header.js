@@ -15,7 +15,7 @@ const Header = ({ currentuser }) => {
                       <img
                         id="logo-img"
                         className="img-center"
-                        src="/assets/images/logo.png"
+                        src="/assets/images/rentWise.PNG"
                         alt=""
                       />
                     </a>

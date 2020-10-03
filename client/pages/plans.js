@@ -24,19 +24,22 @@ const Plans = ({ currentuser, plan }) => {
                   <h1 class="title">
                     <span>P</span>lans
                   </h1>
-                  <p>We're Building Modern And High Software</p>
+                  <p>
+                    We offer great advice, tools and guides to help you plan
+                    your future. Live your best life for free.
+                  </p>
                 </div>
                 <div class="col-lg-5 col-md-12 text-lg-right md-mt-3">
                   <nav aria-label="breadcrumb" class="page-breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
+                        <a href="/">Home</a>
                       </li>
                       <li class="breadcrumb-item">
-                        <a href="#">Services</a>
+                        <a href="/plans">Plans</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Services
+                        Plans
                       </li>
                     </ol>
                   </nav>
@@ -63,9 +66,9 @@ const Plans = ({ currentuser, plan }) => {
                       </div>
                       <h2 class="title">Our Exciting feature And Service</h2>
                       <p>
-                        Softino Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in reprehenderi
+                        You know the tedious process that comes with planning
+                        for the future? We just tossed it out the window and
+                        replaced it with our set of easy to use financial tools.
                       </p>
                     </div>
                   </div>
@@ -78,18 +81,21 @@ const Plans = ({ currentuser, plan }) => {
                           <Fragment>
                             <div key={i} class="col-lg-4 col-md-6 mt-5">
                               <div class="featured-item style-2">
-                                <div class="featured-icon">
+                                {/* <div class="featured-icon">
                                   {' '}
                                   <i class="flaticon-analytics"></i>
                                   <span class="rotateme"></span>
-                                </div>
+                                </div> */}
+                                <img
+                                  className="img-fluid"
+                                  src={plan.image}
+                                  alt=""
+                                ></img>
                                 <div class="featured-title">
                                   <h5> {plan.title} </h5>
                                 </div>
                                 <div class="featured-desc">
-                                  <p>
-                                  {plan.description}
-                                  </p>
+                                  <p>{plan.description}</p>
                                   <a class="icon-btn mt-4" href="#">
                                     {' '}
                                     <i class="la la-angle-right"></i>
@@ -97,7 +103,6 @@ const Plans = ({ currentuser, plan }) => {
                                 </div>
                               </div>
                             </div>
-                          
                           </Fragment>
                         );
                       })}

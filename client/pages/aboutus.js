@@ -23,16 +23,16 @@ const AboutUs = ({ currentuser }) => {
                 <h1 class="title">
                   <span>A</span>bout Us
                 </h1>
-                <p>We're Building Modern And High Software</p>
+                <p>One Mission: To give everyone the power to better manage & grow their own finances.</p>
               </div>
               <div class="col-lg-5 col-md-12 text-lg-right md-mt-3">
                 <nav aria-label="breadcrumb" class="page-breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <a href="index.html">Home</a>
+                      <a href="/">Home</a>
                     </li>
                     <li class="breadcrumb-item">
-                      <a href="#">About Us</a>
+                      <a href="/aboutus">About Us</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                       About Us
@@ -172,6 +172,7 @@ const AboutUs = ({ currentuser }) => {
                   <h2>Who We Are</h2>
                 </div>
                 <p class="lead">
+                RentWise is an online savings platform which will help users save for various personal purposes. We will offer various savings products including periodic investments, however our focus will be on Rent savings. The project is intended to have the following interfaces to be used by the clients and the user  <br/><br/>
                   Whatever you want to save towards, whether rent, outright
                   purchase of house or mortgage, we invite you to select any of
                   our savings products so we can help you achieve your goal.
@@ -220,7 +221,7 @@ const AboutUs = ({ currentuser }) => {
           </div>
         </section>
       </div>
-      {blogPost()}
+      {/* {blogPost()} */}
       <Footer />
     </Fragment>
   );

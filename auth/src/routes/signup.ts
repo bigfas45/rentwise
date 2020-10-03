@@ -40,7 +40,7 @@ router.post(
       .withMessage('Invalid telephone number'),
     
   ],
-  validateRequest, [email],
+  validateRequest, 
 
   async (req: Request, res: Response) => {
     const {

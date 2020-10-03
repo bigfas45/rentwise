@@ -2,7 +2,7 @@ name: deploy-orders
 
 on:
   push:
-    branches: 
+    branches:
       - master
     paths:
       - 'orders/**'
@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd orders && docker build -t dimeji45/orders .
+      - run: cd orders && docker build -t dimeji45 /orders .
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker push dimeji45/orders
+      - run: docker push dimeji45 /orders
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
