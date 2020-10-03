@@ -1,6 +1,5 @@
 // require on top
 import express, { Request, Response, NextFunction } from 'express';
-import { BadRequestError } from '@rentwise/common';
 
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SEND_GRID);
