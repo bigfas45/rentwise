@@ -242,7 +242,7 @@ const Contact = ({ currentuser }) => {
                       {' '}
                       <i className="flaticon-paper-plane"></i>
                       <span>Address:</span>
-                      <p>423B, Road Wordwide Country, USA</p>
+                      <p>423B, Road Wordwide Country, USA.</p>
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-6 md-mt-5">
