@@ -30,6 +30,7 @@
     "express-async-errors": "^3.1.1",
     "express-validator": "^6.6.1",
     "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
     "mongoose": "^5.9.27",
     "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^1.0.0-pre.56",

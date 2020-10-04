@@ -6,6 +6,7 @@ import {createPlanRouter} from './routes/new';
 import {showPlanRouter} from './routes/show';
 import {indexPlanRouter} from './routes/index';
 import {updatePlanRouter} from './routes/update';
+import {deletePlanRouter} from './routes/delete';
 
 
 import cookieSession from 'cookie-session';
@@ -24,6 +25,7 @@ app.use(createPlanRouter);
 app.use(showPlanRouter);
 app.use(indexPlanRouter);
 app.use(updatePlanRouter);
+app.use(deletePlanRouter);
 
 
 
