@@ -11,7 +11,9 @@ export const email = async (
   next: NextFunction
 ) => {
   const { email, firstname, lastname } = req.body;
+
   const mg = mailgun({apiKey: process.env.MAILGUN, domain: DOMAIN});
+
   const data = {
     from: 'noreply@rentwise.com',
     to: `${email}`,
