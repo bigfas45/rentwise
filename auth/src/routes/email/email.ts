@@ -59,14 +59,14 @@ export const email = async (
                                                     You are receiving this email because you have registered on our site.</p>
                                                 <p style="margin-bottom: 10px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">Click the link below to active your RentWise account.</p>
                                                 <p style="margin-bottom: 25px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">This link will expire in 15 minutes and can only be used once.</p>
-                                                <a href="http://rentwise.ng/verifications/account-created-verified" style="background-color: #6576ff;border-radius: 4px;color: #ffffff;display: inline-block;font-size: 13px;font-weight: 600;line-height: 44px;text-align: center;text-decoration: none;text-transform: uppercase;padding: 0 30px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;">Verify Email</a>
+                                                <a href="http://www.rentwise.ng/verifications/account-created-verified" style="background-color: #6576ff;border-radius: 4px;color: #ffffff;display: inline-block;font-size: 13px;font-weight: 600;line-height: 44px;text-align: center;text-decoration: none;text-transform: uppercase;padding: 0 30px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;">Verify Email</a>
                                             </td>
                                         </tr>
                                         <tr style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">
                                             <td style="padding: 0 30px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;mso-table-lspace: 0pt !important;mso-table-rspace: 0pt !important;">
                                                 <h4 style="font-size: 15px;color: #000000;font-weight: 600;margin: 0;text-transform: uppercase;margin-bottom: 10px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding: 0;">or</h4>
                                                 <p style="margin-bottom: 10px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">If the button above does not work, paste this link into your web browser:</p>
-                                                <a href="#" style="color: #6576ff;text-decoration: none;word-break: break-all;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">https://icocrypto.com/account?login_token=dacb711d08a0ee7bda83ce1660918c31e8b43c30</a>
+                                                <a href="#" style="color: #6576ff;text-decoration: none;word-break: break-all;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">http://www.rentwise.ng/verifications/account-created-verified</a>
                                             </td>
                                         </tr>
                                         <tr style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">
