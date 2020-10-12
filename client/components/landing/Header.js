@@ -11,11 +11,11 @@ const Header = ({ currentuser }) => {
               <div className="row">
                 <div className="col-lg-12">
                   <nav className="navbar navbar-expand-lg">
-                    <a className="navbar-brand logo" href="index.html">
+                    <a className="navbar-brand logo" href="/">
                       <img
                         id="logo-img"
                         className="img-center"
-                        src="/assets/images/rentWise.PNG"
+                        src="/assets/images/logoRent.PNG"
                         alt=""
                       />
                     </a>
@@ -73,7 +73,7 @@ const Header = ({ currentuser }) => {
                       currentuser.userType === 1 ? (
                         <a
                           href="/admin/dashboard"
-                          className="btn btn-theme btn-sm"
+                          class="btn btn-theme btn-sm"
                           data-text={`Admin ${currentuser.firstname.charAt(
                             0
                           )}${currentuser.lastname.charAt(0)}`}
@@ -83,7 +83,7 @@ const Header = ({ currentuser }) => {
                       ) : (
                         <a
                           href="/user/dashboard"
-                          className="btn btn-theme btn-sm"
+                          class="btn btn-theme btn-sm"
                           data-text={`Dashboard ${currentuser.firstname.charAt(
                             0
                           )}${currentuser.lastname.charAt(0)}`}
@@ -94,7 +94,7 @@ const Header = ({ currentuser }) => {
                     ) : (
                       <a
                         href="/auth/signin"
-                        className="btn btn-theme btn-sm"
+                        class="btn btn-theme btn-sm"
                         data-text="Login"
                       >
                         {' '}

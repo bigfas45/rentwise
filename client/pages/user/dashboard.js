@@ -1,18 +1,45 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Layout from '../../components/layout';
 import SideBar from '../../components/user/side-bar';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import MyPlan from '../../components/user/my-plan';
+import UserSub from '../../components/user/user-sub-sum';
+
 import Router, { useRouter } from 'next/router';
 import Skeleton from 'react-loading-skeleton';
-const UserDashbaordLandingPage = ({ currentuser }) => {
+import Carousel from 'react-elastic-carousel';
+import Link from 'next/link';
+import useRequest from '../../hooks/use-request';
+
+const UserDashbaordLandingPage = ({ currentuser, plan }) => {
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+
+  const [orders, setOrders] = useState([]);
+
   const router = useRouter();
 
+  const { doRequest } = useRequest({
+    url: '/api/orders',
+    method: 'get',
+    body: {},
+
+    onSuccess: (orders) => setOrders(orders),
+  });
+
   useEffect(() => {
+    doRequest();
     currentuser && currentuser.userType === 0
       ? ''
       : Router.push('/auth/signin');
   }, []);
+
+  
 
   const body = () => {
     return (
@@ -28,201 +55,95 @@ const UserDashbaordLandingPage = ({ currentuser }) => {
                 <div className="nk-block-between-md g-4">
                   <div className="nk-block-head-content">
                     <h3 className="nk-block-title fw-normal">
-                      ₦ <strong>0</strong>.00
+                      ₦{' '}
+                      <strong>
+                        {' '}
+                        <UserSub userId={currentuser.id} />
+                      </strong>
+                      .00
                     </h3>
                     <div className="nk-block-des"></div>
                   </div>
                 </div>
               </div>
 
-              <h2 className="nk-block-title title" style={{ color: '#7f8dff' }}>
-                Get Started
+              <h2 className="nk-block-title title" style={{ color: '#c4c4c8' }}>
+                Save & Invest
               </h2>
 
               <div className="nk-block nk-block-lg">
                 <div className="container text-center my-3">
                   <div className="row mx-auto my-auto">
-                    <div
-                      id="recipeCarousel"
-                      className="carousel slide w-100"
-                      data-ride="carousel"
-                    >
-                      <div className="carousel-inner w-100" role="listbox">
-                        <div className="carousel-item active">
-                          <div className="col-md-4">
-                            <div className="card card-body">
-                              <a href="html/plan.html">
-                                <div
-                                  className="card bg-light"
+                    {/* Here */}
+                    <Carousel breakPoints={breakPoints}>
+                      {plan.map((plan, i) => {
+                        return (
+                          <Fragment key={i}>
+                            <Link
+                              href="/user/[create_user_plan]"
+                              as={`/user/${plan.id}`}
+                            >
+                              <div
+                                className="col-lg-12"
+                                style={{
+                                  paddingLeft: '14px',
+                                  paddingRight: '14px',
+                                  paddingTop: '1rem',
+                                  paddingBottom: '1rem',
+                                }}
+                              >
+                                <a
+                                  href="#"
                                   style={{
-                                    backgroundColor: 'white!important',
-                                    borderRadius: '10px',
-                                    border: '1px solid #c4cefe',
-                                    marginBottom: '5px',
-                                    height: '25%',
-                                    width: '100%',
+                                    fontWeight: '500',
+                                    color: '#0066f5',
+                                    fontSize: '1rem',
+                                    textDecoration: 'none',
                                   }}
                                 >
-                                  <div className="card-inner">
-                                    <h5 className="card-title">
-                                      <img
-                                        src="/assets/newsavings.svg"
-                                        alt="image2"
-                                        height="40"
-                                        width="40"
-                                      />
-                                    </h5>
-                                    <br />
+                                  <div className="card_style">
+                                    <div className="card-inner">
+                                      <p
+                                        style={{
+                                          textAlign: 'left',
+                                          marginTop: '20px',
+                                        }}
+                                      >
+                                        <img
+                                          src={plan.image}
+                                          alt="image2"
+                                          height="40"
+                                          width="40"
+                                        />
+                                      </p>
 
-                                    <p className="card-text">New Saving Plan</p>
+                                      <h2
+                                        className="card-text"
+                                        style={{
+                                          textSlign: 'left',
+                                          fontSize: '20px',
+                                          color: '#0062f5',
+                                        }}
+                                      >
+                                        {plan.title}
+                                      </h2>
+                                    </div>
                                   </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="carousel-item">
-                          <div className="col-md-4">
-                            <div className="card card-body">
-                              <a href="html/goals.html">
-                                <div
-                                  className="card bg-light"
-                                  style={{
-                                    backgroundColor: 'white!important',
-                                    borderRadius: '10px',
-                                    border: '1px solid #c4cefe',
-                                    marginBottom: '5px',
-                                    height: '25%',
-                                    width: '100%',
-                                  }}
-                                >
-                                  <div className="card-inner">
-                                    <h5 className="card-title">
-                                      <img
-                                        src="/assets/goals.svg"
-                                        alt="image2"
-                                        height="40"
-                                        width="40"
-                                      />
-                                    </h5>
-                                    <br />
-
-                                    <p className="card-text">
-                                      Create Life Goals
-                                    </p>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="carousel-item">
-                          <div className="col-md-4">
-                            <div className="card card-body">
-                              <a href="html/mutualfriends.html">
-                                <div
-                                  className="card bg-light"
-                                  style={{
-                                    backgroundColor: 'white!important',
-                                    borderRadius: '10px',
-                                    border: '1px solid #c4cefe',
-                                    marginBottom: '5px',
-                                    height: '25%',
-                                    width: '100%',
-                                  }}
-                                >
-                                  <div className="card-inner">
-                                    <h5 className="card-title">
-                                      <img
-                                        src="/assets/mutual.svg"
-                                        style={{ color: 'blue!important' }}
-                                        alt="image2"
-                                        height="40"
-                                        width="40"
-                                      />
-                                    </h5>
-                                    <br />
-
-                                    <p className="card-text">
-                                      Invest with Mutual Friends
-                                    </p>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="carousel-item">
-                          <div className="col-md-4">
-                            <div className="card card-body">
-                              <a href="html/emergencyfunds.html">
-                                <div
-                                  className="card bg-light"
-                                  style={{
-                                    backgroundColor: 'white!important',
-                                    borderRadius: '10px',
-                                    border: '1px solid #c4cefe',
-                                    marginBottom: '5px',
-                                    height: '25%',
-                                    width: '100%',
-                                  }}
-                                >
-                                  <div className="card-inner">
-                                    <h5 className="card-title">
-                                      <img
-                                        src="/assets/emergencyfunds.svg"
-                                        alt="image2"
-                                        height="40"
-                                        width="40"
-                                      />
-                                    </h5>
-                                    <br />
-
-                                    <p className="card-text">
-                                      Build Emergency Funds
-                                    </p>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <a
-                        className="carousel-control-prev w-auto"
-                        href="#recipeCarousel"
-                        role="button"
-                        data-slide="prev"
-                      >
-                        <span
-                          className="carousel-control-prev-icon"
-                          style={{ backgroundColor: '#7f8dff!important' }}
-                          aria-hidden="true"
-                        ></span>
-                        <span className="sr-only">Previous</span>
-                      </a>
-
-                      <a
-                        className="carousel-control-next w-auto"
-                        href="#recipeCarousel"
-                        role="button"
-                        data-slide="next"
-                      >
-                        <span
-                          className="carousel-control-next-icon"
-                          style={{ backgroundColor: '#7f8dff!important' }}
-                          aria-hidden="true"
-                        ></span>
-                        <span className="sr-only">Next</span>
-                      </a>
-                    </div>
+                                </a>
+                              </div>
+                            </Link>
+                          </Fragment>
+                        );
+                      })}
+                    </Carousel>
                   </div>
                 </div>
               </div>
+
+              <div className="nk-block nk-block-lg"></div>
+              {/* Plans  */}
+
+              <MyPlan />
 
               <div className="nk-block nk-block-lg"></div>
             </div>
@@ -241,7 +162,8 @@ const UserDashbaordLandingPage = ({ currentuser }) => {
             <SideBar />
 
             <div className="nk-wrap ">
-              <Header currentuser={currentuser} title="Account Overview" /> {/* Content Main */}
+              <Header currentuser={currentuser} title="Account Overview" />{' '}
+              {/* Content Main */}
               <div className="nk-content nk-content-fluid">{body()}</div>
               {/* Content Main */}
               {/* Footer */}
@@ -263,6 +185,11 @@ UserDashbaordLandingPage.getInitialProps = async (
   context,
   client,
   currentuser
-) => {};
+) => {
+  const { data } = await client.get('/api/plan');
+
+
+  return { plan: data };
+};
 
 export default UserDashbaordLandingPage;

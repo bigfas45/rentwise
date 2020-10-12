@@ -27,14 +27,14 @@ const Plan = ({ currentuser, plan }) => {
             <div className="nk-wrap ">
               <Header currentuser={currentuser} title="Choose Package" />{' '}
               {/* Content Main */}
-              <div class="nk-content nk-content-fluid">
-                <div class="container-xl wide-lg">
-                  <div class="nk-content-body">
-                    <div class="nk-block nk-block-lg">
-                      <div class="nk-block nk-block-lg">
-                        <div class="card card-preview">
-                          <div class="card-inner">
-                            <div class="row">
+              <div className="nk-content nk-content-fluid">
+                <div className="container-xl wide-lg">
+                  <div className="nk-content-body">
+                    <div className="nk-block nk-block-lg">
+                      <div className="nk-block nk-block-lg">
+                        <div className="card card-preview">
+                          <div className="card-inner">
+                            <div className="row">
                               <Card plan={plan} />
                             </div>
                           </div>

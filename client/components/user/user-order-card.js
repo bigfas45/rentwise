@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
-import useRequest from '../../hooks/use-request';
+import Sum from '../user/sum';
 
 const useStyles = makeStyles({
   root: {
@@ -21,31 +21,7 @@ const useStyles = makeStyles({
 });
 
 const UserCard = ({ currentuser, order }) => {
-  const [state, setState] = useState('');
 
-  const getId = (orderid) => {
-    const { doRequest, errors, loading } = useRequest({
-      url: `/api/subscription/${orderid}`,
-      method: 'get',
-      body: {},
-
-      onSuccess: (data) => {
-        var payments = 0;
-        data.map((pay, i) => {
-          var payment = pay.order.amount;
-          payments += payment;
-        });
-
-        setState(payments);
-      },
-    });
-
-    useEffect(() => {
-      doRequest();
-    }, []);
-
-    return state
-  };
 
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
@@ -101,7 +77,9 @@ const UserCard = ({ currentuser, order }) => {
                             fontSize: '12px',
                           }}
                         >
-                          {order.plan.title}
+                          {/* {order.plan.title} */}
+
+                          {order.plan ? order.plan.title : ''}
                         </button>
                       </div>
                     </div>
@@ -122,7 +100,7 @@ const UserCard = ({ currentuser, order }) => {
                         {' '}
                         <h6>
                           <sup>₦</sup>
-                          <b style={{ fontSize: '25px' }}>{getId(order.id)}</b>
+                          <Sum orderId={order.id}></Sum>
                           .00
                         </h6>
                       </div>

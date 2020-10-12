@@ -11,8 +11,6 @@ import UserCard from '../../../components/user/user-order-card';
 const Plan = ({ currentuser, orders }) => {
   const router = useRouter();
 
-  console.log(orders)
-
   useEffect(() => {
     currentuser && currentuser.userType === 0
       ? ''
@@ -88,7 +86,7 @@ const Plan = ({ currentuser, orders }) => {
                               </Link>
                             </div>
 
-                            <UserCard order={orders}   />
+                            <UserCard order={orders} />
                           </div>
                         </div>
                       </div>
@@ -110,10 +108,7 @@ const Plan = ({ currentuser, orders }) => {
 };
 
 Plan.getInitialProps = async (context, client, currentuser) => {
-  
   const { data } = await client.get(`/api/orders`);
-
-  
 
   return { orders: data };
 };

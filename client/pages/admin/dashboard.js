@@ -41,7 +41,7 @@ const AdminDashbaordLandingPage = ({ currentuser }) => {
                                     <strong>
                                       39,485{' '}
                                       <span class="currenct currency-usd">
-                                        USD
+                                            nnn
                                       </span>
                                     </strong>
                                   </div>

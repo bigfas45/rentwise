@@ -176,12 +176,7 @@ const AboutUs = ({ currentuser }) => {
                   Whatever you want to save towards, whether rent, outright
                   purchase of house or mortgage, we invite you to select any of
                   our savings products so we can help you achieve your goal.
-                  Whatever you want to save towards, whether rent, outright
-                  purchase of house or mortgage, we invite you to select any of
-                  our savings products so we can help you achieve your goal.
-                  Whatever you want to save towards, whether rent, outright
-                  purchase of house or mortgage, we invite you to select any of
-                  our savings products so we can help you achieve your goal.
+                  
                 </p>
                 <a
                   class="btn btn-theme btn-circle"

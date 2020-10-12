@@ -34,7 +34,7 @@ const Layout = ({ title = 'Rent Wise', description = 'Description' }) => {
 <link href="/assets/landing/assets/css/shortcodes.css" rel="stylesheet" type="text/css" />
 <link href="/assets/landing/assets/css/style2.css" rel="stylesheet" type="text/css" />
 <link href="/assets/landing/assets/css/responsive2.css" rel="stylesheet" type="text/css" />
-<link href="/assets/landing/assets/css/theme-color/color-5.css" data-style="styles" rel="stylesheet"/>
+<link href="#" data-style="styles" rel="stylesheet"/>
 <link href="/assets/landing/assets/css/color-customize/color-customizer.css" rel="stylesheet" type="text/css" />
 
 

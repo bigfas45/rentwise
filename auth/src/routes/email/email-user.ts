@@ -2,8 +2,9 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { BadRequestError } from '@rentwise/common';
 
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SEND_GRID);
+const mailgun = require("mailgun-js");
+const DOMAIN = 'nasddatax.com';
+
 
 export const emailP = async (
   req: Request,
@@ -11,6 +12,7 @@ export const emailP = async (
   next: NextFunction
 ) => {
   const { subject, body, firstname, lastname, emailTo } = req.body;
+  const mg = mailgun({apiKey: process.env.MAILGUN, domain: DOMAIN});
 
   const emailData = {
     to: `${emailTo}`, // admin
@@ -26,7 +28,7 @@ export const emailP = async (
                         <tbody style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">
                             <tr style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">
                                 <td style="text-align: center;padding-bottom: 25px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;mso-table-lspace: 0pt !important;mso-table-rspace: 0pt !important;">
-                                    <a href="#" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;text-decoration: none;"><img style="height: 40px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;-ms-interpolation-mode: bicubic;" src="images/logo-dark2x.png" alt="logo"></a>
+                                    <a href="#" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;text-decoration: none;"><img style="height: 40px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;-ms-interpolation-mode: bicubic;" src="https://nasdng.com/wp-content/uploads/2020/10/logoRent.png" alt="logo"></a>
                                     <p style="font-size: 14px;color: #6576ff;padding-top: 12px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;">Conceptual Base Modern Dashboard Theme</p>
                                 </td>
                             </tr>
@@ -67,9 +69,9 @@ export const emailP = async (
            
         `,
   };
-  sgMail
-    .send(emailData) //@ts-ignore
-    .then((sent) => console.log('SENT >>>')) //@ts-ignore
-    .catch((err) => console.log('ERR >>>', err));
+  // @ts-ignore
+  mg.messages().send(data, function (error, body) {
+    console.log(body);
+  });
   next();
 };

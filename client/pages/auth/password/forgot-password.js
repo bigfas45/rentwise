@@ -75,8 +75,8 @@ const ForgotPassword = ({currentuser}) => {
                 <div className="nk-block nk-block-middle nk-auth-body">
                     <div className="brand-logo pb-5">
                         <a href="html/index.html" className="logo-link">
-                            <img className="logo-light logo-img logo-img-lg" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo"/>
-                            <img className="logo-dark logo-img logo-img-lg" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark"/>
+                            <img className="logo-light logo-img logo-img-lg" src="/assets/images/logoRent.PNG" srcSet="/assets/images//assets/images/logoRent.PNG 2x" alt="logo"/>
+                            <img className="logo-dark logo-img logo-img-lg" src="/assets/images/logoRent.PNG" srcSet="/assets/images//assets/images/logoRent.PNG 2x" alt="logo-dark"/>
                         </a>
                     </div>
 

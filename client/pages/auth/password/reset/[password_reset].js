@@ -9,7 +9,7 @@ import Link from 'next/link';
 const PasswordReset = ({user}) => {
 
 
-    const userId = user.user.id
+    const userId = user.id
 
 
     const [data, setData] = useState('');
@@ -158,6 +158,8 @@ PasswordReset.getInitialProps = async (context, client) => {
     const {password_reset} = context.query;
 
     const {data} = await client.get(`/api/users/${password_reset}`);
+
+    console.log(data)
 
 
     return {user: data};

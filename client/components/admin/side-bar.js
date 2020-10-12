@@ -11,7 +11,7 @@ return (<Fragment>
                     <div className="nk-sidebar-brand">
                         <a href="html/crypto/index.html" className="logo-link nk-sidebar-logo">
                         {/* <img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo"/> */}
-                        <img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark"/>
+                        <img className="logo-dark logo-img" src="/assets/images/logoRent.PNG" srcSet="/assets/images/logoRent.PNG 2x" alt="logo-dark"/>
                             <span className="nio-version">Crypto</span>
                         </a>
                     </div>

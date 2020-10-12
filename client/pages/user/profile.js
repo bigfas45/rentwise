@@ -312,7 +312,7 @@ const Profile = ({ currentuser }) => {
 
   return currentuser ? (
     <Fragment>
-      <Layout title="Landing Page" />
+      <Layout title={`${currentuser.firstname} ${currentuser.lastname} `} />
       <body className="nk-body npc-crypto bg-white has-sidebar ">
         <div className="nk-app-root">
           <div className="nk-main">
@@ -363,7 +363,10 @@ const Profile = ({ currentuser }) => {
                             <div className="row gy-4">
                               <div className="col-md-6">
                                 <div className="form-group">
-                                  <label className="form-label"htmlFor="full-name">
+                                  <label
+                                    className="form-label"
+                                    htmlFor="full-name"
+                                  >
                                     First Name
                                   </label>
                                   <input
@@ -382,7 +385,7 @@ const Profile = ({ currentuser }) => {
                                 <div className="form-group">
                                   <label
                                     className="form-label"
-                                   htmlFor="display-name"
+                                    htmlFor="display-name"
                                   >
                                     Last Name
                                   </label>
@@ -400,7 +403,10 @@ const Profile = ({ currentuser }) => {
                               </div>
                               <div className="col-md-6">
                                 <div className="form-group">
-                                  <label className="form-label"htmlFor="phone-no">
+                                  <label
+                                    className="form-label"
+                                    htmlFor="phone-no"
+                                  >
                                     Phone Number
                                   </label>
                                   <input
@@ -417,7 +423,10 @@ const Profile = ({ currentuser }) => {
                               </div>
                               <div className="col-md-6">
                                 <div className="form-group">
-                                  <label className="form-label"htmlFor="birth-day">
+                                  <label
+                                    className="form-label"
+                                    htmlFor="birth-day"
+                                  >
                                     Account Number
                                   </label>
                                   <input
@@ -431,7 +440,10 @@ const Profile = ({ currentuser }) => {
                               </div>
                               <div className="col-md-6">
                                 <div className="form-group">
-                                  <label className="form-label"htmlFor="birth-day">
+                                  <label
+                                    className="form-label"
+                                    htmlFor="birth-day"
+                                  >
                                     Bank Name
                                   </label>
                                   <input
@@ -445,7 +457,10 @@ const Profile = ({ currentuser }) => {
                               </div>
                               <div className="col-md-6">
                                 <div className="form-group">
-                                  <label className="form-label"htmlFor="birth-day">
+                                  <label
+                                    className="form-label"
+                                    htmlFor="birth-day"
+                                  >
                                     Date of Birth
                                   </label>
                                   <input
@@ -460,8 +475,11 @@ const Profile = ({ currentuser }) => {
                               </div>
                               <div className="col-md-6">
                                 <div className="form-group">
-                                  <label className="form-label"htmlFor="address-l2">
-                                    Address 
+                                  <label
+                                    className="form-label"
+                                    htmlFor="address-l2"
+                                  >
+                                    Address
                                   </label>
                                   <input
                                     type="text"
@@ -503,11 +521,7 @@ const Profile = ({ currentuser }) => {
                           </form>
                         </div>
                         <div className="tab-pane" id="address">
-                          <div className="row gy-4">
-                           
-
-                           
-                          </div>
+                          <div className="row gy-4"></div>
                         </div>
                       </div>
                     </div>

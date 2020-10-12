@@ -100,10 +100,10 @@ const LandingPage = ({ currentuser }) => {
                         data-wow-duration="1.5s"
                       >
                         {' '}
-                        Landlord no <br />
-                        go shame us....
+                        {/* Landlord no <br />
+                        go shame us.... */}
                       </h1>
-                      <p
+                      <h2
                         className="lead mb-5 text-white wow fadeInUp"
                         data-wow-duration="2s"
                         data-wow-delay="0.3s"
@@ -112,16 +112,19 @@ const LandingPage = ({ currentuser }) => {
                         We provide flexible options for you to save towards your
                         rent, mortgage or outright purchase of properties.{' '}
                         <br />
-                        To Save & Invest
-                      </p>
+                        {/* To Save & Invest */}
+                      </h2>
                       <div className="video-box">
                         <div className="video-btn heartbeat">
                           {' '}
-                          <a
+                          {/* <a
                             className="play-btn popup-youtube"
                             href="https://www.youtube.com/watch?v=P_wKDMcr1Tg"
                           >
                             <i className="la la-play"></i>
+                          </a> */}
+                          <a href="/user/dashboard" className="btn btn-theme">
+                            CREATE FREE ACCOUNT
                           </a>
                           <div className="spinner-eff">
                             <div className="spinner-circle circle-1"></div>
@@ -277,10 +280,7 @@ const LandingPage = ({ currentuser }) => {
                 <div className="row">
                   <div className="col-lg-6 col-md-10 ml-auto mr-auto">
                     <div className="section-title">
-                      <h2 className="title">
-                        {' '}
-                        Start now in 3 easy steps
-                      </h2>
+                      <h2 className="title"> Start now in 3 easy steps</h2>
                     </div>
                   </div>
                 </div>
@@ -368,11 +368,11 @@ const LandingPage = ({ currentuser }) => {
                         <i className="la la-sort-numeric-asc"></i>
                       </div>
                       <h2>Number Speak Louder then Word</h2>
-                      <p className="lead">
+                      {/* <p className="lead">
                         Softino Ut enim ad minim veniam, quis nostrud
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat. Duis aute irure dolor in reprehenderi
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </div>
@@ -395,50 +395,6 @@ const LandingPage = ({ currentuser }) => {
                           <div className="counter-icon">
                             <img
                               className="img-center"
-                              src="/assets/counter/01.png"
-                              alt=""
-                            ></img>
-                          </div>
-                          <div className="counter-desc">
-                            {' '}
-                            <span
-                              className="count-number"
-                              data-to="2304"
-                              data-speed="10000"
-                            >
-                              2304
-                            </span>
-                            <h5>Project Done</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="item">
-                        <div className="counter">
-                          <div className="counter-icon">
-                            <img
-                              className="img-center"
-                              src="/assets/counter/02.png"
-                              alt=""
-                            ></img>
-                          </div>
-                          <div className="counter-desc">
-                            {' '}
-                            <span
-                              className="count-number"
-                              data-to="3585"
-                              data-speed="10000"
-                            >
-                              3585
-                            </span>
-                            <h5>Success Rate</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="item">
-                        <div className="counter">
-                          <div className="counter-icon">
-                            <img
-                              className="img-center"
                               src="/assets/counter/03.png"
                               alt=""
                             ></img>
@@ -452,7 +408,7 @@ const LandingPage = ({ currentuser }) => {
                             >
                               1365
                             </span>
-                            <h5>Awards</h5>
+                            <h5>Payouts</h5>
                           </div>
                         </div>
                       </div>
@@ -524,7 +480,11 @@ const LandingPage = ({ currentuser }) => {
                                   <i className="la la-quote-left"></i>
                                 </div>
                                 <p>
-                                Every month, we shine a spotlight on one saver, asking them questions about their savings culture and how the product is specifically helping them shape how they spend and save for future responsibilities.
+                                  Every month, we shine a spotlight on one
+                                  saver, asking them questions about their
+                                  savings culture and how the product is
+                                  specifically helping them shape how they spend
+                                  and save for future responsibilities.
                                 </p>
                                 <div className="testimonial-caption">
                                   <h5>Ayodimeji Fasina</h5>
@@ -547,7 +507,11 @@ const LandingPage = ({ currentuser }) => {
                                   <i className="la la-quote-left"></i>
                                 </div>
                                 <p>
-                                  PI used to feel too young to start setting money aside, with Cowrywise I have realized it is never too early to get started with your savings. Cowrywise is my coping mechanism to build up for an independent life.
+                                  PI used to feel too young to start setting
+                                  money aside, with RentWise I have realized it
+                                  is never too early to get started with your
+                                  savings. RentWise is my coping mechanism to
+                                  build up for an independent life.
                                 </p>
                                 <div className="testimonial-caption">
                                   <h5>Emmanuel Aboaja</h5>
@@ -570,7 +534,14 @@ const LandingPage = ({ currentuser }) => {
                                   <i className="la la-quote-left"></i>
                                 </div>
                                 <p>
-                                 My experience with Cowrywise in line with my goals has been so far amazing in terms of helping me to know how much to save monthly/weekly to meet my goals target. It feels good knowing my money is been saved and yielding interest as well and not just held up in my bank account falling victim of the schemes of banks. Thank you Cowrywise.
+                                  My experience with RentWise in line with my
+                                  goals has been so far amazing in terms of
+                                  helping me to know how much to save
+                                  monthly/weekly to meet my goals target. It
+                                  feels good knowing my money is been saved and
+                                  yielding interest as well and not just held up
+                                  in my bank account falling victim of the
+                                  schemes of banks. Thank you RentWise.
                                 </p>
                                 <div className="testimonial-caption">
                                   <h5>Paul </h5>

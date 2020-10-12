@@ -115,7 +115,7 @@ const Footer = () => {
                   />
                 </div>
                 <p className="mb-0">
-                  RentWise (formerly rentwise.ng) is the largest online savings
+                  RentWise is the largest online savings
                   & investing platform in Nigeria. For over 4 years, our
                   customers have saved and invested billions of Naira that they
                   would normally be tempted to spend.

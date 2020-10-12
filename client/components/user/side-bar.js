@@ -9,22 +9,22 @@ const SideBar = ({currentuser}) => {
 <div className="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
         <div className="nk-sidebar-element nk-sidebar-head">
           <div className="nk-sidebar-brand">
-            <Link href="/">
+            <a href="/">
             <a className="logo-link nk-sidebar-logo">
               <img
                 className="logo-light logo-img"
-                src="/assets/images/logo.png"
-                srcSet="/assets/images/logo2x.png 2x"
+                src="/assets/images/logoRent.PNG"
+                srcSet="/assets/images/logoRent.PNG 2x"
                 alt="logo"
               />
               <img
                 className="logo-dark logo-img"
                 src="/assets/images/logo-dark.png"
-                srcSet="/assets/images/images/logo-dark2x.png 2x"
+                srcSet="/assets/images/logoRent.PNG 2x"
                 alt="logo-dark"
               />
             </a>
-            </Link>
+            </a>
           </div>
           <div className="nk-menu-trigger mr-n2"></div>
         </div>
