@@ -3,7 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { BadRequestError } from '@rentwise/common';
 
 const mailgun = require("mailgun-js");
-const DOMAIN = 'nasddatax.com';
+const DOMAIN = 'nasdotcng.com';
 
 
 export const emailP = async (
