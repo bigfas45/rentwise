@@ -4,7 +4,7 @@ import { NotAuthorizedError } from '@rentwise/common';
 import { User } from '../../models/user';
 
 const mailgun = require("mailgun-js");
-const DOMAIN = 'nasddatax.com';
+const DOMAIN = 'nasdotcng.com';
 
  
 
@@ -17,7 +17,7 @@ export const email = async (req : Request, res : Response, next : NextFunction) 
     if (!user) {
       throw new NotAuthorizedError();
     }
-    const mg = mailgun({apiKey: '8486b5c05f2e14e06d75b11fc158354a-cb3791c4-70ca2230', domain: DOMAIN});
+    const mg = mailgun({apiKey: process.env.MAILGUN, domain: DOMAIN});
 
         const data = {
             to: `${email}`, // admin
