@@ -1,12 +1,11 @@
 import { Fragment, useEffect } from 'react';
-import Layout from '../../../components/layout';
-import SideBar from '../../../components/user/side-bar';
-import Header from '../../../components/header';
-import Footer from '../../../components/footer';
+import Layout from '../../components/layout';
+import SideBar from '../../components/user/side-bar';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 import Router, { useRouter } from 'next/router';
 import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
-import UserCard from '../../../components/user/user-order-card';
 
 const Payment = ({ currentuser, orders }) => {
   const router = useRouter();
