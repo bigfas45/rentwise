@@ -123,9 +123,18 @@ const LandingPage = ({ currentuser }) => {
                           >
                             <i className="la la-play"></i>
                           </a> */}
-                          <a href="/user/dashboard" className="btn btn-theme">
+                          <a href="auth/signin" className="btn btn-theme">
                             CREATE FREE ACCOUNT
                           </a>
+                          {currentuser ? (
+                            <a href="/user/dashboard" className="btn btn-theme">
+                              Dashboard
+                            </a>
+                          ) : (
+                            <a href="/auth/signin" className="btn btn-theme">
+                              CREATE FREE ACCOUNT
+                            </a>
+                          )}
                           <div className="spinner-eff">
                             <div className="spinner-circle circle-1"></div>
                             <div className="spinner-circle circle-2"></div>
