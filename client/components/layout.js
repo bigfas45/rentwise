@@ -35,11 +35,10 @@ const Layout = ({ title = 'Rent Wise', description = 'Description' }) => {
       </Head>
 
       <Head>
-        {/* <script src="/assets/js/dashboard.js"></script> */}
-        {/* <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> */}
+      
        <script src="/assets/js/bundle.js?ver=1.8.0"></script>
         <script src="/assets/js/scripts.js?ver=1.8.0"></script>
-        {/* <script src="/assets/js/charts/chart-crypto.js?ver=1.8.0"></script> */}
+      
        
       </Head>
     </Fragment>

@@ -34,96 +34,59 @@ const Payment = ({ currentuser, orders }) => {
               <div className="nk-content nk-content-fluid">
                 <div className="container-xl wide-lg">
                   <div className="nk-content-body">
-                    <div class="card card-preview">
-                      <div class="card-inner">
-                        <ul class="nav nav-tabs mt-n3">
-                          <li class="nav-item">
-                            <a
-                              class="nav-link active"
-                              data-toggle="tab"
-                              href="#tabItem1"
+                    <div className="nk-block-head">
+                      <ul className="nav nav-tabs">
+                        <li className="nav-item">
+                          <a className="nav-link active">
+                            <span>Cards</span>
+                          </a>
+                        </li>
+                        <li className="nav-item">
+                          <a className="nav-link active">
+                            <span>Bank</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="nk-block nk-block-lg">
+                      <div className="card card-preview">
+                        <div className="card-inner">
+                          <div className="row">
+                            <div
+                              className="col-lg-5"
+                              style={{
+                                paddingLeft: '1.5rem',
+                                paddingRight: '1.5rem',
+                                paddingTop: '2rem',
+                                paddingBottom: '2rem',
+                              }}
                             >
-                              Personal
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a
-                              class="nav-link"
-                              data-toggle="tab"
-                              href="#tabItem2"
-                            >
-                              Security
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a
-                              class="nav-link"
-                              data-toggle="tab"
-                              href="#tabItem3"
-                            >
-                              Notifications
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a
-                              class="nav-link"
-                              data-toggle="tab"
-                              href="#tabItem4"
-                            >
-                              Connect
-                            </a>
-                          </li>
-                        </ul>
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="tabItem1">
-                            <p>
-                              Cillum ad ut irure tempor velit nostrud occaecat
-                              ullamco aliqua anim Lorem sint. Veniam sint duis
-                              incididunt do esse magna mollit excepteur laborum
-                              qui. Id id reprehenderit sit est eu aliqua
-                              occaecat quis et velit excepteur laborum mollit
-                              dolore eiusmod. Ipsum dolor in occaecat commodo et
-                              voluptate minim reprehenderit mollit pariatur.
-                              Deserunt non laborum enim et cillum eu deserunt
-                              excepteur ea incid.
-                            </p>
-                          </div>
-                          <div class="tab-pane" id="tabItem2">
-                            <p>
-                              Culpa dolor voluptate do laboris laboris irure
-                              reprehenderit id incididunt duis pariatur mollit
-                              aute magna pariatur consectetur. Eu veniam duis
-                              non ut dolor deserunt commodo et minim in quis
-                              laboris ipsum velit id veniam. Quis ut consectetur
-                              adipisicing officia excepteur non sit. Ut et elit
-                              aliquip labore Lorem enim eu. Ullamco mollit
-                              occaecat dolore ipsum id officia mollit qui esse
-                              anim eiusmod do sint minim consectetur qui.
-                            </p>
-                          </div>
-                          <div class="tab-pane" id="tabItem3">
-                            <p>
-                              Fugiat id quis dolor culpa eiusmod anim velit
-                              excepteur proident dolor aute qui magna. Ad
-                              proident laboris ullamco esse anim Lorem Lorem
-                              veniam quis Lorem irure occaecat velit nostrud
-                              magna nulla. Velit et et proident Lorem do ea
-                              tempor officia dolor. Reprehenderit Lorem aliquip
-                              labore est magna commodo est ea veniam
-                              consectetur.
-                            </p>
-                          </div>
-                          <div class="tab-pane" id="tabItem4">
-                            <p>
-                              Eu dolore ea ullamco dolore Lorem id cupidatat
-                              excepteur reprehenderit consectetur elit id dolor
-                              proident in cupidatat officia. Voluptate excepteur
-                              commodo labore nisi cillum duis aliqua do. Aliqua
-                              amet qui mollit consectetur nulla mollit velit
-                              aliqua veniam nisi id do Lorem deserunt amet.
-                              Culpa ullamco sit adipisicing labore officia magna
-                              elit nisi in aute tempor commodo eiusmod.
-                            </p>
+                              <Link href="/user/select-plan">
+                                <a
+                                  style={{
+                                    fontWeight: '500',
+                                    color: '#0066f5',
+                                    fontSize: '1rem',
+                                    textDecoration: 'none',
+                                  }}
+                                >
+                                  <div className="card_style">
+                                    <div className="card-inner">
+                                      <p>
+                                        <h6
+                                          className="card-title"
+                                          style={{ color: '#0066f5' }}
+                                        >
+                                          +
+                                        </h6>
+                                      </p>
+                                      <p className="card-text">Add new card</p>
+                                    </div>
+                                  </div>
+                                </a>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
