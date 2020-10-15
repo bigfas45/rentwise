@@ -123,9 +123,7 @@ const LandingPage = ({ currentuser }) => {
                           >
                             <i className="la la-play"></i>
                           </a> */}
-                          <a href="auth/signin" className="btn btn-theme">
-                            CREATE FREE ACCOUNT
-                          </a>
+                        
                           {currentuser ? (
                             <a href="/user/dashboard" className="btn btn-theme">
                               Dashboard
