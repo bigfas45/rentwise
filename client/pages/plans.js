@@ -96,13 +96,21 @@ const Plans = ({ currentuser, plan }) => {
                                 </div>
                                 <div class="featured-desc">
                                   <p>{plan.description}</p>
-                                  <a
-                                    class="icon-btn mt-4"
-                                    href="/user/select-plan"
-                                  >
-                                    {' '}
-                                    <i class="la la-angle-right"></i>
-                                  </a>
+
+                                  {currentuser ? (
+                                    <a
+                                      class="icon-btn mt-4"
+                                      href="/user/select-plan"
+                                    >
+                                      {' '}
+                                      <i class="la la-angle-right"></i>
+                                    </a>
+                                  ) : (
+                                    <a class="icon-btn mt-4" href="auth/signin">
+                                      {' '}
+                                      <i class="la la-angle-right"></i>
+                                    </a>
+                                  )}
                                 </div>
                               </div>
                             </div>

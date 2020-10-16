@@ -115,10 +115,7 @@ const Footer = () => {
                   />
                 </div>
                 <p className="mb-0">
-                  RentWise is the largest online savings & investing platform in
-                  Nigeria. For over 4 years, our customers have saved and
-                  invested billions of Naira that they would normally be tempted
-                  to spend.
+                  RentWise is an online savings platform owned by PennyWise MFB.
                 </p>
               </div>
               <div className="col-lg-4 col-md-6 pl-md-5 sm-mt-5 footer-list justify-content-between d-flex">
@@ -172,9 +169,9 @@ const Footer = () => {
                 <div className="col-lg-6 col-md-12">
                   {' '}
                   <span>
-                    Copyright 2020 RentWise Theme by{' '}
+                    rentwise.ng
                     <u>
-                      <a href="#">rentwise</a>
+                      <a href="/">rentwise</a>
                     </u>{' '}
                     | All Rights Reserved
                   </span>
@@ -194,7 +191,7 @@ const Footer = () => {
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fab fa-google-plus-g"></i> Google Plus
+                          <i className="fab fa-instagram"></i> Instagram
                         </a>
                       </li>
                     </ul>

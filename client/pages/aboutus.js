@@ -23,7 +23,7 @@ const AboutUs = ({ currentuser }) => {
                 <h1 class="title">
                   <span>A</span>bout Us
                 </h1>
-                <p>One Mission: To give everyone the power to better manage & grow their own finances.</p>
+                {/* <p>One Mission: To give everyone the power to better manage & grow their own finances.</p> */}
               </div>
               <div class="col-lg-5 col-md-12 text-lg-right md-mt-3">
                 <nav aria-label="breadcrumb" class="page-breadcrumb">
