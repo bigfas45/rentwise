@@ -80,7 +80,7 @@ const Payment = ({ currentuser, orders }) => {
                       <div class="row">
                         <div class="col-lg-5">
                           <a
-                            href="html/add_bank_details.html"
+                            href="/user/add-bank"
                             style={{
                               fontWeight: '500',
                               color: '#0066f5',
