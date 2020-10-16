@@ -123,13 +123,12 @@ const LandingPage = ({ currentuser }) => {
                           >
                             <i className="la la-play"></i>
                           </a> */}
-                        
                           {currentuser ? (
-                            <a href="/user/dashboard" className="btn btn-theme">
+                            <a href="/user/dashboard" className="btn btn-light">
                               Dashboard
                             </a>
                           ) : (
-                            <a href="/auth/signin" className="btn btn-theme">
+                            <a href="/auth/signin" className="btn btn-light">
                               CREATE FREE ACCOUNT
                             </a>
                           )}
@@ -374,7 +373,7 @@ const LandingPage = ({ currentuser }) => {
                         <div className="ellipse"></div>{' '}
                         <i className="la la-sort-numeric-asc"></i>
                       </div>
-                      <h2>Number Speak Louder then Word</h2>
+                      <h2>Numbers speaks louder than words</h2>
                       {/* <p className="lead">
                         Softino Ut enim ad minim veniam, quis nostrud
                         exercitation ullamco laboris nisi ut aliquip ex ea

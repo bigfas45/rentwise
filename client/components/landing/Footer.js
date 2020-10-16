@@ -115,10 +115,10 @@ const Footer = () => {
                   />
                 </div>
                 <p className="mb-0">
-                  RentWise is the largest online savings
-                  & investing platform in Nigeria. For over 4 years, our
-                  customers have saved and invested billions of Naira that they
-                  would normally be tempted to spend.
+                  RentWise is the largest online savings & investing platform in
+                  Nigeria. For over 4 years, our customers have saved and
+                  invested billions of Naira that they would normally be tempted
+                  to spend.
                 </p>
               </div>
               <div className="col-lg-4 col-md-6 pl-md-5 sm-mt-5 footer-list justify-content-between d-flex">
@@ -151,7 +151,7 @@ const Footer = () => {
                   <li>
                     Phone:{' '}
                     <a href="tel:+912345678900">
-                      <b>0802 366 3846</b>
+                      <b>0815 556 7409</b>
                     </a>
                   </li>
                   {/* <li>
