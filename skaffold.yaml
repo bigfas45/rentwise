@@ -20,7 +20,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image:  dimeji45/client
+    - image: dimeji45/client
       context: client
       docker:
         dockerfile: Dockerfile
