@@ -7,7 +7,7 @@ import Router, { useRouter } from 'next/router';
 import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
 
-const Payment = ({ currentuser, orders }) => {
+const Payment = ({ currentuser }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Payment = ({ currentuser, orders }) => {
                       <div class="row gy-3">
                         <div class="col-md-6">
                           <h2>Add bank account</h2>
-                          <h6 style={{color: "grey"}}>
+                          <h6 style={{ color: 'grey' }}>
                             Withdraws are paid into your bank account.
                           </h6>
                         </div>
@@ -49,41 +49,39 @@ const Payment = ({ currentuser, orders }) => {
                                 placeholder="Enter Plan Name"
                                 required
                               />
-                                <br />
+                              <br />
 
-                                <select class="form-control" id="default-06">
-                                  <option value="default_option">
-                                    Select Bank
-                                  </option>
-                                  <option value="option_select_name">
-                                    Option select name
-                                  </option>
-                                  <option value="option_select_name">
-                                    Option select name
-                                  </option>
-                                </select>
+                              <select class="form-control" id="default-06">
+                                <option value="default_option">
+                                  Select Bank
+                                </option>
+                                <option value="option_select_name">
+                                  Option select name
+                                </option>
+                                <option value="option_select_name">
+                                  Option select name
+                                </option>
+                              </select>
 
-                                <br />
-                                <a
-                                  href="#"
-                                  class="btn btn-primary"
-                                  style={{marginLeft: "65%"}}
-                                >
-                                  Add Bank
-                                </a>
-                              </div>
+                              <br />
+                              <a
+                                href="#"
+                                class="btn btn-primary"
+                                style={{ marginLeft: '65%' }}
+                              >
+                                Add Bank
+                              </a>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </form>
-                  </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-      
-        
+        </div>
       </Fragment>
     );
   };

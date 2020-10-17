@@ -30,12 +30,12 @@ const SubPlan = ({ currentuser, order }) => {
     url: `/api/subscription/`,
     method: 'post',
     body: {
-      orderId: order.id
+      orderId: order.id,
     },
 
     onSuccess: (data) => {
-     console.log(data)
-     Router.push('/user/plans')
+      console.log(data);
+      Router.push('/user/plans');
     },
   });
 
@@ -48,9 +48,8 @@ const SubPlan = ({ currentuser, order }) => {
   const componentProps = {
     ...config,
     text: 'Proceed',
-    onSuccess: (data) => { 
-      doRequest()
-     
+    onSuccess: (data) => {
+      doRequest();
     },
     onClose: () => {
       null;

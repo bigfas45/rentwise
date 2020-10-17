@@ -6,9 +6,29 @@ import Footer from '../../components/footer';
 import Router, { useRouter } from 'next/router';
 import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
+import { PaystackButton } from 'react-paystack';
 
 const Payment = ({ currentuser, orders }) => {
   const router = useRouter();
+
+  
+    const config = {
+      reference: new Date().getTime(),
+      email: currentuser.email,
+      amount: 100 * 100,
+      publicKey: 'pk_test_a3c6eed2d7700ebb41bf5417adeee9ae037f0fdc',
+    };
+
+    const componentProps = {
+      ...config,
+      text: 'Proceed',
+      onSuccess: (data) => {
+        console.log(data);
+      },
+      onClose: () => {
+        null;
+      },
+    };
 
   useEffect(() => {
     currentuser && currentuser.userType === 0
@@ -139,10 +159,11 @@ const Payment = ({ currentuser, orders }) => {
                       data-dismiss="modal"
                       aria-label="Close"
                     >
-                      <h6 style={{color: "blue"}}>Cancel</h6>
+                      <h6 style={{ color: 'blue' }}>Cancel</h6>
                     </a>
 
-                    <button class="btn btn-primary">Proceed</button>
+                    {/* <button class="btn btn-primary">Proceed</button> */}
+                    <PaystackButton {...componentProps} />
                   </div>
                 </div>
               </div>
