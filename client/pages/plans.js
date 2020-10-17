@@ -87,6 +87,8 @@ const Plans = ({ currentuser, plan }) => {
                                   <span class="rotateme"></span>
                                 </div> */}
                                 <img
+                                  width="50"
+                                  height="50"
                                   className="img-fluid"
                                   src={plan.image}
                                   alt=""
