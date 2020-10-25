@@ -212,7 +212,12 @@ const Savings = ({ currentuser, orders }) => {
                   </div>
                   <div class="card-inner">
                     <p class="card-title" style={{ color: '#473fa8' }}>
-                      <sup>₦</sup> <b style={{ fontSize: '25px' }}>{state}</b>
+                      <sup>₦</sup> <b style={{ fontSize: '25px' }}>
+                        {/* subscribtion totaln */}
+                        {/* {state} */}
+                      
+                      
+                      </b>
                       .00
                     </p>
                   </div>

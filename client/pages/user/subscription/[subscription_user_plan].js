@@ -1,9 +1,12 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Layout from '../../../components/layout';
 import SideBar from '../../../components/user/side-bar';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import useRequest from '../../../hooks/use-request';
+import useRequest2 from '../../../hooks/use-request2';
+import useRequest3 from '../../../hooks/use-request3';
+
 import Router, { useRouter } from 'next/router';
 import Skeleton from 'react-loading-skeleton';
 import moment from 'moment';
@@ -14,14 +17,65 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { useToasts } from 'react-toast-notifications';
+import { Spinner } from 'reactstrap';
 
 const SubPlan = ({ currentuser, order }) => {
+  const [refre, setRefre] = useState('');
+    const [openCard, setOpenCard] = React.useState(false);
+
+
   const config = {
-    reference: new Date().getTime(),
+    reference: refre,
     email: currentuser.email,
     amount: 100 * 100,
     publicKey: 'pk_test_a3c6eed2d7700ebb41bf5417adeee9ae037f0fdc',
-    plan: order.plan_code,
+  };
+  const [state, setState] = useState('');
+
+  const { doRequest3, errors3, loading3 } = useRequest3({
+    url: `/api/orders/card/${currentuser.id}`,
+    method: 'get',
+    body: {},
+    onSuccess: (data) => {
+      setState(data.customer.customer_code);
+    },
+  });
+
+  const { doRequest2, errors2, loading2 } = useRequest2({
+    url: `/api/orders/addcard`,
+    method: 'post',
+    body: {
+      reference: refre,
+    },
+
+    onSuccess: (data) => {
+      setOpenCard(false);
+      Router.push(
+        '/user/subscription/[subscription_user_plan]',
+        `/user/subscription/${order.id}`
+      );
+    },
+  });
+
+  const componentProps = {
+    ...config,
+    text: 'Proceed',
+    onSuccess: (data) => {
+      doRequest2();
+      console.log(data);
+    },
+    onClose: () => {
+      null;
+    },
+  };
+
+  const toast = () => {
+    const { addToast } = useToasts();
+    addToast('content', {
+      appearance: 'error',
+      autoDismiss: true,
+    });
   };
 
   const router = useRouter();
@@ -31,11 +85,13 @@ const SubPlan = ({ currentuser, order }) => {
     method: 'post',
     body: {
       orderId: order.id,
+      customer: state,
     },
 
     onSuccess: (data) => {
       console.log(data);
-      Router.push('/user/plans');
+
+      router.push('/user/plans');
     },
   });
 
@@ -43,18 +99,9 @@ const SubPlan = ({ currentuser, order }) => {
     currentuser && currentuser.userType === 0
       ? ''
       : Router.push('/auth/signin');
+    setRefre(new Date().getTime());
+    doRequest3();
   }, []);
-
-  const componentProps = {
-    ...config,
-    text: 'Proceed',
-    onSuccess: (data) => {
-      doRequest();
-    },
-    onClose: () => {
-      null;
-    },
-  };
 
   const [open, setOpen] = React.useState(false);
 
@@ -64,6 +111,19 @@ const SubPlan = ({ currentuser, order }) => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+
+  const handleClickOpenCard = () => {
+    setOpenCard(true);
+  };
+
+  const handleCloseCard = () => {
+    setOpenCard(false);
+  };
+
+  const onSubmit = () => {
+    doRequest();
   };
 
   const body = () => {
@@ -215,14 +275,26 @@ const SubPlan = ({ currentuser, order }) => {
                     <br />
 
                     <div>
-                      <Button
-                        variant="outlined"
-                        color="primary"
-                        style={{ marginLeft: '67%', marginRight: '5%' }}
-                        onClick={handleClickOpen}
-                      >
-                        Let's Do This
-                      </Button>
+                      {errors3 ? (
+                        <Button
+                          variant="outlined"
+                          color="primary"
+                          style={{ marginLeft: '67%', marginRight: '5%' }}
+                          onClick={handleClickOpenCard}
+                        >
+                          New Debit Card
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outlined"
+                          color="secondary"
+                          style={{ marginLeft: '67%', marginRight: '5%' }}
+                          onClick={handleClickOpen}
+                        >
+                          Create Plan
+                        </Button>
+                      )}
+
                       <Dialog
                         open={open}
                         onClose={handleClose}
@@ -242,8 +314,55 @@ const SubPlan = ({ currentuser, order }) => {
                           <Button onClick={handleClose} color="primary">
                             Cancel
                           </Button>
+                          {loading && loading ? (
+                            <Button
+                              className="btn btn-primary"
+                              variant="success"
+                              disabled
+                            >
+                              <Spinner
+                                as="span"
+                                animation="grow"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                              />
+                              Loading...
+                            </Button>
+                          ) : (
+                            <Button
+                              className="btn btn-primary"
+                              onClick={onSubmit}
+                              color="primary"
+                            >
+                              Submit
+                            </Button>
+                          )}{' '}
+                          {errors}
+                        </DialogActions>
+                      </Dialog>
 
+                      <Dialog
+                        open={openCard}
+                        onClose={handleCloseCard}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                      >
+                        <DialogTitle id="alert-dialog-title">
+                          {'Add Card'}
+                        </DialogTitle>
+                        <DialogContent>
+                          <DialogContentText id="alert-dialog-description">
+                            To add and verify your card ₦ 100 will be charged
+                            and saved into your plan
+                          </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                          <Button onClick={handleCloseCard} color="primary">
+                            Cancel
+                          </Button>
                           <PaystackButton {...componentProps} />
+                          {errors}
                         </DialogActions>
                       </Dialog>
                     </div>
@@ -291,8 +410,6 @@ SubPlan.getInitialProps = async (context, client, currentuser) => {
   const { subscription_user_plan } = context.query;
 
   const { data } = await client.get(`/api/orders/${subscription_user_plan}`);
-
-  console.log(data);
 
   return { order: data };
 };

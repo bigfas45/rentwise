@@ -21,10 +21,11 @@ const router = express.Router();
 router.post(
   '/api/subscription',
   requireAuth,
-  [ body('orderId').not().isEmpty()],
+  [body('orderId').not().isEmpty(),
+   body('customer').not().isEmpty()],
   validateRequest,
   async (req: Request, res: Response) => {
-    const { token, orderId, access_code,authorization_url } = req.body;
+    const {  orderId, customer } = req.body;
     const order = await Order.findById(orderId);
 
     if (!order) {
@@ -39,25 +40,44 @@ router.post(
     }
     // var reference = mongoose.Types.ObjectId().toHexString();
 
-    const subscription = Subscription.build({
+    var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://api.paystack.co/subscription',
+  'headers': {
+    'Authorization': 'Bearer sk_test_57c8ea757206e92301543f914d45843ab9466bcf',
+    'Content-Type': 'application/json'
+  },
+  form: {
+    'customer': customer,
+    'plan': order.plan_code
+  }
+    };
+    // @ts-ignore
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+   const data = JSON.parse(response.body)
+
+
+     const subscription = Subscription.build({
       order: order,
       orderId: orderId,
       userId: req.currentUser!.id,
 
     });
-    await subscription.save();
-
-    // new SubscriptionCreatedPublisher(natsWrapper.client).publish({
-    //   id: subscription.id,
-    //   orderId: scription.orderId,
-    //   reference: subscription.reference,
-    //   access_code: subscription.access_code,
-    //   authorization_url: subscription.authorization_url,
-    // });
-
-    res.status(201).send({
+  subscription.save();
+  
+      res.status(201).send({
       subscription,
-    });
+    })
+ 
+
+});
+
+    
+  
+
+ 
   }
 );
 

@@ -100,9 +100,7 @@ const SelectPlan = ({ currentuser, plan }) => {
                       expiresAt: '',
                     }}
                     onSubmit={async (values) => {
-                      
-
-                      await sleep(3000);
+                      await sleep(7000);
 
                       console.log('values', values);
 
@@ -118,27 +116,26 @@ const SelectPlan = ({ currentuser, plan }) => {
                       })}
                     >
                       <Box mt={8}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <h2 className="text-blue mr-5">
-                            What are you saving for?
-                          </h2>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              What are you saving for?
+                            </h2>
+                          </Grid>
+
+                          <Grid item xs={5}>
+                            <Field
+                              fullWidth
+                              name="name"
+                              component={TextField}
+                              label="Plan name"
+                              variant="outlined"
+                              onBlur={(e) => {
+                                SetName(e.currentTarget.value);
+                              }}
+                            />
+                          </Grid>
                         </Grid>
-                       
-                        <Grid item xs={5}>
-                          <Field
-                            fullWidth
-                            name="name"
-                            component={TextField}
-                            label="Plan name"
-                            variant="outlined"
-                            onBlur={(e) => {
-                              SetName(e.currentTarget.value);
-                            }}
-                          />
-                        </Grid>
-                      
-                      </Grid>
                       </Box>
                     </FormikStep>
 
@@ -149,99 +146,98 @@ const SelectPlan = ({ currentuser, plan }) => {
                           .min(100, 'A minimum of ₦100 is required'),
                       })}
                     >
-                       <Box mt={8}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <h2 className="text-blue mr-5">
-                            How much would you like to save monthly?
-                          </h2>
+                      <Box mt={8}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              How much would you like to save monthly?
+                            </h2>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <Field
+                              fullWidth
+                              name="amount"
+                              type="number"
+                              component={TextField}
+                              label="Amont"
+                              variant="outlined"
+                              onBlur={(e) => {
+                                SetAmount(e.currentTarget.value);
+                              }}
+                            />
+                          </Grid>
                         </Grid>
-                        <Grid item xs={5}>
-                          <Field
-                            fullWidth
-                            name="amount"
-                            type="number"
-                            component={TextField}
-                            label="Amont"
-                            variant="outlined"
-                            onBlur={(e) => {
-                              SetAmount(e.currentTarget.value);
-                            }}
-                          />
-                        </Grid>
-                      </Grid>
                       </Box>
                     </FormikStep>
 
                     <FormikStep>
-                    <Box mt={8}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <h2 className="text-blue mr-5">
-                            Do you want to automate your savings?:
-                          </h2>
+                      <Box mt={8}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              Do you want to automate your savings?:
+                            </h2>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <FormGroup>
+                              <RadioGroup
+                                value={debitType || ''}
+                                onChange={(e) => {
+                                  SetDebitType(e.target.value);
+                                }}
+                              >
+                                <FormControlLabel
+                                  value="automatic"
+                                  control={<Radio />}
+                                  label="yes, I want to be debited automatically"
+                                />
+                                <FormControlLabel
+                                  value="manual"
+                                  control={<Radio />}
+                                  label="No, I want to save when I want to"
+                                />
+                              </RadioGroup>
+                            </FormGroup>
+                          </Grid>
                         </Grid>
-                        <Grid item xs={5}>
-                          <FormGroup>
-                            
-                            <RadioGroup
-                              value={debitType || ''}
-                              onChange={(e) => {
-                                SetDebitType(e.target.value);
-                              }}
-                            >
-                              <FormControlLabel
-                                value="automatic"
-                                control={<Radio />}
-                                label="yes, I want to be debited automatically"
-                              />
-                              <FormControlLabel
-                                value="manual"
-                                control={<Radio />}
-                                label="No, I want to save when I want to"
-                              />
-                            </RadioGroup>
-                          </FormGroup>
-                        </Grid>
-                      </Grid>
                       </Box>
                     </FormikStep>
 
                     <FormikStep>
-                    <Box mt={8}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <h2 className="text-blue mr-5">
-                            How frequently would you like to save?
-                          </h2>
+                      <Box mt={8}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              How frequently would you like to save?
+                            </h2>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <FormGroup>
+                              <RadioGroup
+                                value={interval || ''}
+                                onChange={(e) => {
+                                  SetDebitType2(e.target.value);
+                                }}
+                              >
+                                <FormControlLabel
+                                  value="daily"
+                                  control={<Radio />}
+                                  label="Once a day"
+                                />
+                                <FormControlLabel
+                                  value="weekly"
+                                  control={<Radio />}
+                                  label="Once a week"
+                                />
+                                <FormControlLabel
+                                  value="monthly"
+                                  control={<Radio />}
+                                  label="Once a month"
+                                />
+                              </RadioGroup>
+                            </FormGroup>
+                          </Grid>
                         </Grid>
-                        <Grid item xs={5}>
-                          <FormGroup>
-                          <RadioGroup
-                              value={interval || ''}
-                              onChange={(e) => {
-                                SetDebitType2(e.target.value);
-                              }}
-                            >
-                               <FormControlLabel
-                                value="daily"
-                                control={<Radio />}
-                                label="Once a day"
-                              />
-                              <FormControlLabel
-                                value="weekly"
-                                control={<Radio />}
-                                label="Once a week"
-                              />
-                              <FormControlLabel
-                                value="monthly"
-                                control={<Radio />}
-                                label="Once a month"
-                              />
-                            </RadioGroup>
-                          </FormGroup>
-                        </Grid>
-                      </Grid>
                       </Box>
                     </FormikStep>
 
@@ -250,29 +246,29 @@ const SelectPlan = ({ currentuser, plan }) => {
                         startDate: date().required('data is required'),
                       })}
                     >
-                       <Box mt={8}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <h2 className="text-blue mr-5">
-                            When would you like to start saving?
-                          </h2>
+                      <Box mt={8}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              When would you like to start saving?
+                            </h2>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <FormGroup>
+                              <Field
+                                fullWidth
+                                name="startDate"
+                                type="date"
+                                component={TextField}
+                                variant="outlined"
+                                min="2020-08-28"
+                                onBlur={(e) => {
+                                  SetStartDate(e.currentTarget.value);
+                                }}
+                              />
+                            </FormGroup>
+                          </Grid>
                         </Grid>
-                        <Grid item xs={5}>
-                          <FormGroup>
-                            <Field
-                              fullWidth
-                              name="startDate"
-                              type="date"
-                              component={TextField}
-                              variant="outlined"
-                              min="2020-08-28"
-                              onBlur={(e) => {
-                                SetStartDate(e.currentTarget.value);
-                              }}
-                            />
-                          </FormGroup>
-                        </Grid>
-                      </Grid>
                       </Box>
                     </FormikStep>
 
@@ -281,28 +277,58 @@ const SelectPlan = ({ currentuser, plan }) => {
                         expiresAt: date().required('data is required'),
                       })}
                     >
-                       <Box mt={8}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <h2 className="text-blue mr-5">
-                            <label>How long would you like to save?</label>
-                          </h2>
+                      <Box mt={8}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              <label>How long would you like to save?</label>
+                            </h2>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <FormGroup>
+                              <Field
+                                fullWidth
+                                name="expiresAt"
+                                type="date"
+                                component={TextField}
+                                variant="outlined"
+                                onBlur={(e) => {
+                                  SetExpiresAt(e.currentTarget.value);
+                                }}
+                              />
+                            </FormGroup>
+                          </Grid>
                         </Grid>
-                        <Grid item xs={5}>
-                          <FormGroup>
-                            <Field
-                              fullWidth
-                              name="expiresAt"
-                              type="date"
-                              component={TextField}
-                              variant="outlined"
-                              onBlur={(e) => {
-                                SetExpiresAt(e.currentTarget.value);
-                              }}
-                            />
-                          </FormGroup>
+                      </Box>
+                    </FormikStep>
+
+                    <FormikStep
+                      validationSchema={object({
+                        expiresAt: date().required('data is required'),
+                      })}
+                    >
+                      <Box mt={8}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={6}>
+                            <h2 className="text-blue mr-5">
+                              <label>How long would you like to save?</label>
+                            </h2>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <FormGroup>
+                              <Field
+                                fullWidth
+                                name="expiresAt"
+                                type="date"
+                                component={TextField}
+                                variant="outlined"
+                                onBlur={(e) => {
+                                  SetExpiresAt(e.currentTarget.value);
+                                }}
+                              />
+                            </FormGroup>
+                          </Grid>
                         </Grid>
-                      </Grid>
                       </Box>
                     </FormikStep>
                   </FormikStepper>

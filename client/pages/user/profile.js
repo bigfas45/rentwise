@@ -95,7 +95,7 @@ const Profile = ({ currentuser }) => {
                     <div className="row gy-4">
                       <div className="col-md-12">
                         <div className="form-group">
-                          <label className="form-label"htmlFor="full-name">
+                          <label className="form-label" htmlFor="full-name">
                             New Password
                           </label>
                           <input
@@ -275,9 +275,7 @@ const Profile = ({ currentuser }) => {
                         </div>
                         <div className="data-col data-col-end">
                           <span className="data-more">
-                            <em className="icon ni ni-forward-ios">
-                              {}
-                            </em>
+                            <em className="icon ni ni-forward-ios">{}</em>
                           </span>
                         </div>
                       </div>

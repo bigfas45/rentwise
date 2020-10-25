@@ -9,6 +9,8 @@ import { indexSubRouter } from './routes/index';
 import { showUserSubscriptionRouter } from './routes/show';
 import { ContactRouter } from './routes/contact';
 import { ContactUsRouter } from './routes/contactus';
+import { BankRouter } from './routes/bank';
+import { webHookRouter } from './routes/webhook';
 
 
 import cookieSession from 'cookie-session';
@@ -32,6 +34,9 @@ app.use(indexSubRouter);
 app.use(showUserSubscriptionRouter);
 app.use(ContactRouter);
 app.use(ContactUsRouter);
+app.use(BankRouter);
+app.use(webHookRouter);
+
 
 app.all('*', async (req, res, next) => {
   throw new NotFoundError();

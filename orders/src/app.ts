@@ -10,6 +10,8 @@ import {newOrderRouter} from './routes/new'
 import {updateOrderRouter} from './routes/updates'
 import {PlanOrderRouter} from './routes/orders-plan'
 import {UserOrderRouter} from './routes/order-users'
+import {addCardRouter} from './routes/add-card'
+import {indexCardsRouter} from './routes/cards'
 
 
 const app = express();
@@ -28,6 +30,8 @@ app.use(newOrderRouter);
 app.use(updateOrderRouter);
 app.use(PlanOrderRouter);
 app.use(UserOrderRouter);
+app.use(addCardRouter);
+app.use(indexCardsRouter);
 
 
 
