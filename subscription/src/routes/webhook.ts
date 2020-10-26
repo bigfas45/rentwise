@@ -12,9 +12,9 @@ const router = express.Router();
 
 router.post(
   '/api/subscription/my/webhook/subscription/',
-  async (req: Request, res: Response) => {
+   (req: Request, res: Response) => {
     // Retrieve the request's body
-    var event = await req.body;
+    var event =  req.body;
     // Do something with event
     console.log("eventss", event.data);
     res.status(200).send({ event })
