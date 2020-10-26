@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: bigfash45/auth
+          image: dimeji45/auth
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

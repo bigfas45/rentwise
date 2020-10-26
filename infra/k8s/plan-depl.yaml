@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: plan
-          image: bigfash45/plan
+          image: dimeji45/plan
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

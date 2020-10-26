@@ -16,8 +16,8 @@ router.post(
     // Retrieve the request's body
     var event = req.body;
     // Do something with event
-    console.log("event", event.data);
-    res.status(200).send({event})
+    console.log("eventss", event.data);
+    res.status(200).send({ event })
   }
 );
 
