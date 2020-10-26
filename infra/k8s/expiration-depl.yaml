@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: expiration
-          image: dimeji45/expiration
+          image: bigfash45/expiration
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

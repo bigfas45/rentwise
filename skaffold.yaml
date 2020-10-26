@@ -12,7 +12,7 @@ build:
   googleCloudBuild:
     projectId: rentwise-dev-289221
   artifacts:
-    - image: dimeji45/auth
+    - image: bigfash45/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -20,7 +20,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: dimeji45/client
+    - image: bigfash45/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -28,7 +28,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: dimeji45/plan
+    - image: bigfash45/plan
       context: plan
       docker:
         dockerfile: Dockerfile
@@ -36,7 +36,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: dimeji45/orders
+    - image: bigfash45/orders
       context: orders
       docker:
         dockerfile: Dockerfile
@@ -44,7 +44,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: dimeji45/expiration
+    - image: bigfash45/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -52,7 +52,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: dimeji45/subscription
+    - image: bigfash45/subscription
       context: subscription
       docker:
         dockerfile: Dockerfile

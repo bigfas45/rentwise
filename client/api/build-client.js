@@ -5,7 +5,8 @@ const buildClient =  ({ req }) => {
     // We are on the server
 
     return axios.create({
-      baseURL: 'http://www.rentwise.ng/',
+      baseURL:
+        'http://www.rentwise.ng/',
       headers: req.headers,
     });
   } else {
