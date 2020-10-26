@@ -35,6 +35,7 @@ const Savings = ({ currentuser, orders }) => {
     method: 'post',
     body: {
       orderId: orders.id,
+      customer: 'CUS_1meb3gzqopqszhc',
     },
 
     onSuccess: (data) => {
