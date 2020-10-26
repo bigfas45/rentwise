@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: plan
-          image: dimeji45/plan
+          image: us.gcr.io/rentwise-dev-289221/plan
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

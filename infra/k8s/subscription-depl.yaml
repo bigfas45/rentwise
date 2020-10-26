@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: subscription
-          image: dimeji45/subscription
+          image: us.gcr.io/rentwise-dev-289221/subscription
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
@@ -52,5 +52,5 @@ spec:
   ports:
     - name: subscription
       protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 8080
+      targetPort: 8080
