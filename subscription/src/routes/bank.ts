@@ -16,7 +16,7 @@ router.post(
  body('bank_account')
       .not()
       .isEmpty()
-      .withMessage('Account number  is required'),
+      .withMessage('Account number  is required.'),
  body('bank_code')
       .not()
       .isEmpty()
