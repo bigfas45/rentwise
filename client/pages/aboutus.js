@@ -32,7 +32,7 @@ const AboutUs = ({ currentuser }) => {
                       <a href="/">Home</a>
                     </li>
                     <li class="breadcrumb-item">
-                      <a href="/aboutus">About Us</a>
+                      <a href="/aboutus">About Us </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                       About Us
