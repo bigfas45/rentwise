@@ -59,16 +59,16 @@ request(options, function (error, response) {
    const data = JSON.parse(response.body)
 
 
-     const subscription = Subscription.build({
-      order: order,
-      orderId: orderId,
-      userId: req.currentUser!.id,
+  //    const subscription = Subscription.build({
+  //     order: order,
+  //     orderId: orderId,
+  //     userId: req.currentUser!.id,
 
-    });
-  subscription.save();
+  //   });
+  // subscription.save();
   
       res.status(201).send({
-      subscription,
+      data,
     })
  
 
