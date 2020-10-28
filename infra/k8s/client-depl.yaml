@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: dimeji45/client
+          image: diimeji45/client
           env:
             - name: JWT_KEY
               valueFrom:

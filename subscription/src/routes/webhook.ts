@@ -14,7 +14,9 @@ import { Order } from '../models/orders';
 
 const router = express.Router();
 
-var orderId = '5f95814c27a77400187f9e08'
+var orderId = '5f95814c27a77400187f9e08';
+var crypto = require('crypto');
+var secret = process.env.SECRET_KEY;
 
 router.post(
   '/api/subscription/my/webhook/subscription/',
@@ -38,15 +40,27 @@ router.post(
     var event =  req.body;
     // Do something with event
    
-   if (event) {
-     const subscription = Subscription.build({
+//    if (event) {
+//     
+//  res.send(200);  }
+   
+   var hash = crypto.createHmac('sha512', secret).update(JSON.stringify(req.body)).digest('hex');
+    if (hash == req.headers['x-paystack-signature']) {
+    // Retrieve the request's body
+    var event = req.body;
+ const subscription = Subscription.build({
         order: order,
       orderId: "orderId",
       userId: req.currentUser!.id,
 
     });
-   await  subscription.save();
- res.send(200);  }
+      await subscription.save();
+   }
+   
+   res.send(200);
+
+   
+   
    }
 
 );

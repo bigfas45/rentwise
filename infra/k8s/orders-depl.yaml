@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: dimeji45/orders
+          image: diimeji45/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
