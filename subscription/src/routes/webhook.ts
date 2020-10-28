@@ -27,9 +27,7 @@ router.post(
     if (!order) {
       throw new NotFoundError();
     }
-    if (order.userId !== req.currentUser!.id) {
-      throw new NotAuthorizedError();
-    }
+  
 
     if (order.status === OrderStatus.Cancelled) {
       throw new BadRequestError('Cannot pay for a cancelled order');
