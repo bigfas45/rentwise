@@ -79,7 +79,7 @@ const Savings = ({ currentuser, orders }) => {
     text: 'Proceed',
     onSuccess: (data) => {
       // subscribtion insertion to the db
-      doRequest();
+      // doRequest();
     },
     onClose: () => {
       null;
