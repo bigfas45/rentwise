@@ -80,6 +80,7 @@ const Savings = ({ currentuser, orders }) => {
     onSuccess: (data) => {
       // subscribtion insertion to the db
       // doRequest();
+      Router.push('/user/plans');
     },
     onClose: () => {
       null;
@@ -157,7 +158,7 @@ const Savings = ({ currentuser, orders }) => {
                         {moment(s.createdAt).format('LL')}{' '}
                       </span>
                     </div>
-                  
+
                     <div class="nk-tb-col tb-col-sm text-right">
                       <span class="tb-sub tb-amount">
                         {/* {s.order.amount}  <span>NGN</span> */}
@@ -213,11 +214,10 @@ const Savings = ({ currentuser, orders }) => {
                   </div>
                   <div class="card-inner">
                     <p class="card-title" style={{ color: '#473fa8' }}>
-                      <sup>₦</sup> <b style={{ fontSize: '25px' }}>
+                      <sup>₦</sup>{' '}
+                      <b style={{ fontSize: '25px' }}>
                         {/* subscribtion totaln */}
                         {/* {state} */}
-                      
-                      
                       </b>
                       .00
                     </p>
