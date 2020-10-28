@@ -40,9 +40,7 @@ router.post(
     var event =  req.body;
     // Do something with event
    
-//    if (event) {
-//     
-//  res.send(200);  }
+
    
    var hash = crypto.createHmac('sha512', secret).update(JSON.stringify(req.body)).digest('hex');
     if (hash == req.headers['x-paystack-signature']) {
