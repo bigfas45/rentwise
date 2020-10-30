@@ -42,6 +42,9 @@ const SubPlan = ({ currentuser, order }) => {
     },
   });
 
+    const router = useRouter();
+
+
   const { doRequest2, errors2, loading2 } = useRequest2({
     url: `/api/orders/addcard`,
     method: 'post',
@@ -51,7 +54,7 @@ const SubPlan = ({ currentuser, order }) => {
 
     onSuccess: (data) => {
       setOpenCard(false);
-      Router.push(
+      router.push(
         '/user/subscription/[subscription_user_plan]',
         `/user/subscription/${order.id}`
       );
@@ -78,7 +81,6 @@ const SubPlan = ({ currentuser, order }) => {
     });
   };
 
-  const router = useRouter();
 
   const { doRequest, errors, loading } = useRequest({
     url: `/api/subscription/`,

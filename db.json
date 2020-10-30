@@ -1,5 +1,5 @@
 {
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzM5MDY4LCJpYXQiOjE2MDM4ODMzOTEsIm5iZiI6MTYwMzg4MzM5MSwiZXhwIjoxNjAzOTY5NzkxfQ.6ZR_3oEaEp_G79wmNQa7PKEzBtjPtwIWQJDGkdlx3Gs",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzM5MDY4LCJpYXQiOjE2MDQwNTYzMTQsIm5iZiI6MTYwNDA1NjMxNCwiZXhwIjoxNjA0MTQyNzE0fQ.jx6DyvUJkQQh0-ZiGyqGSWJzpXcY2kU5Ng_sEGyIrQo",
   "user": {
     "integrations": [
       {
@@ -21,7 +21,7 @@
     "area_code": "0",
     "calling_code": "+234",
     "registration_complete": true,
-    "last_login": "2020-10-28T11:05:33.000Z",
+    "last_login": "2020-10-30T10:38:24.000Z",
     "wt_access": "none",
     "is_developer": true,
     "job_title": "developer",
@@ -33,7 +33,7 @@
     "current_integration": 395772,
     "passwordLastResetAt": "2020-10-25T15:23:48.000Z",
     "createdAt": "2019-11-22T13:58:59.000Z",
-    "updatedAt": "2020-10-28T11:05:33.000Z",
+    "updatedAt": "2020-10-30T10:38:24.000Z",
     "display_state": "test",
     "role": {
       "value": 541165879287,
@@ -150,8 +150,8 @@
     "flat_threshhold": 2500,
     "transfer_charge": 5000,
     "settlement_schedule": "T1",
-    "test_redirect_url": "https://rentwise.dev/user/payment",
-    "test_webhook_endpoint": "https://2659136b19a4.ngrok.io/api/subscription/my/webhook/subscription/",
+    "test_redirect_url": "https://www.rentwise.ng/user/payment",
+    "test_webhook_endpoint": "https://a835caefa156.ngrok.io/api/plan",
     "live_redirect_url": null,
     "live_webhook_endpoint": null,
     "test_integration_url": null,
@@ -213,7 +213,7 @@
     "primary_user": 339068,
     "organization": 1,
     "createdAt": "2019-11-22T13:58:59.000Z",
-    "updatedAt": "2020-10-28T15:32:05.000Z",
+    "updatedAt": "2020-10-30T12:32:36.000Z",
     "transfer_fees": [
       {
         "fee": 5000,
@@ -318,7 +318,7 @@
       "incorporated_before_2017": 0,
       "has_refreshed_incorporation_documents": false,
       "createdAt": "2019-12-19T00:35:25.000Z",
-      "updatedAt": "2020-10-28T11:37:55.000Z"
+      "updatedAt": "2020-10-30T12:32:04.000Z"
     },
     "office_address": {},
     "registered_address": {},
@@ -329,5 +329,5 @@
       "description": "This role grants users the permissions to manage everything on the dashboard"
     }
   },
-  "token_expiry": 1603969791
+  "token_expiry": 1604142714
 }

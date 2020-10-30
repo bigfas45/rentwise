@@ -11,6 +11,7 @@ import { ContactRouter } from './routes/contact';
 import { ContactUsRouter } from './routes/contactus';
 import { BankRouter } from './routes/bank';
 import { webHookRouter } from './routes/webhook';
+import { indexWebhookSubRouter } from './routes/index-webhook';
 
 
 import cookieSession from 'cookie-session';
@@ -36,6 +37,7 @@ app.use(ContactRouter);
 app.use(ContactUsRouter);
 app.use(BankRouter);
 app.use(webHookRouter);
+app.use(indexWebhookSubRouter);
 
 
 app.all('*', async (req, res, next) => {
