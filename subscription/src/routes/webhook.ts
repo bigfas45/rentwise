@@ -8,35 +8,40 @@ import {
   BadRequestError,
   currentUser,
 } from '@rentwise/common';
-import { Webhook } from '../models/webhook';
 
 
 const router = express.Router();
 
 
 
-router.post(
+router.get(
   '/api/subscription/my/webhook/subscription/',
   (req: Request, res: Response) => {
      
- 
+ var request = require('request');
+var options = {
+  'method': 'GET',
+  'url': 'https://api.paystack.co/bank',
+  'headers': {
+    'Authorization': 'Bearer sk_live_6a3b0c48e9ed24166bb496e39f2fe4047cfb681a'
+  },
+  formData: {
 
+  }
+};
+    // @ts-ignore
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  const data = JSON.parse(response.body)
   
-    // Retrieve the request's body
-    var event =  req.body;
-    // Do something with event
-   
-
-   
+      res.status(201).send(
+      data.data,
+    )
  
- const webhook = Webhook.build({
-      
-      userId: req.currentUser!.id,
+});
 
-    });
-       webhook.save();
    
-   res.status(200).send(webhook);
+   
 
    
    

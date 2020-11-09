@@ -9,14 +9,15 @@ import Link from 'next/link';
 import { Spinner, Button } from 'reactstrap';
 import useRequest from '../../hooks/use-request';
 import useRequest2 from '../../hooks/use-request2';
+import useRequest3 from '../../hooks/use-request3';
 
-const Payment = ({ currentuser }) => {
+const Payment = ({ currentuser, bank }) => {
   const router = useRouter();
   const [bank_account, setBank_account] = useState('');
   const [bank_code, setBank_code] = useState('');
   const [codeError, setCodeError] = useState('');
-    const [success, setSuccess] = useState('');
-
+  const [success, setSuccess] = useState('');
+  // const [banks, setBanks] = useState(['']);
 
   const { doRequest2, errors2, loading2 } = useRequest2({
     url: `/api/users/${currentuser.id}`,
@@ -30,6 +31,16 @@ const Payment = ({ currentuser }) => {
       console.log(data);
     },
   });
+
+  // const { doRequest3, errors3, loading3 } = useRequest3({
+  //   url: `https://rentwise.dev/api/subscription/my/webhook/subscription/`,
+  //   method: 'post',
+  //   body: {},
+
+  //   onSuccess: (data) => {
+  //     setBanks({data});
+  //   },
+  // });
 
   const { doRequest, errors, loading } = useRequest({
     url: '/api/subscription/bank',
@@ -46,19 +57,15 @@ const Payment = ({ currentuser }) => {
         doRequest2();
         setSuccess(data.message);
         setCodeError('');
-
       } else {
         setCodeError(data.message);
       }
-
-
-
     },
   });
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setCodeError('')
+    setCodeError('');
 
     doRequest();
   };
@@ -69,6 +76,7 @@ const Payment = ({ currentuser }) => {
       : Router.push('/auth/signin');
     setBank_account(currentuser.bnv);
     setBank_code(currentuser.bank);
+   
   }, []);
 
   const content = () => {
@@ -118,10 +126,14 @@ const Payment = ({ currentuser }) => {
                                 <option value="default_option">
                                   Select Bank
                                 </option>
-                                <option value="033">
-                                  United Bank For Africa
-                                </option>
-                                <option value="232">Sterling Bank</option>
+                                {bank.map((ban, i) => {
+                                  return (
+                                    <option value={ban.code}>{ban.name}</option>
+                                  );
+                                 
+                                })}
+
+                               
                               </select>
                               <br />
                               <div className="form-group">
@@ -229,7 +241,12 @@ const Payment = ({ currentuser }) => {
 };
 
 Payment.getInitialProps = async (context, client, currentuser) => {
-  return {};
+  const { data } = await client.get(
+    `/api/subscription/my/webhook/subscription/`
+  );
+
+
+  return { bank: data };
 };
 
 export default Payment;
