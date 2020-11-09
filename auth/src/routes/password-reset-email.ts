@@ -16,7 +16,7 @@ const router = express.Router();
 router.post(
   '/api/users/password-reset-email',
 
-  body('email').isEmail().withMessage('Email must be valid'),
+  body('email').isEmail().withMessage('Email must be valid.'),
 
   email,
   async (req: Request, res: Response) => {
