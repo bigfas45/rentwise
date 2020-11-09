@@ -13,8 +13,8 @@ spec:
         app: plan
     spec:
       containers:
-        - name: plan
-          image: dimeji45/plan
+        - name:  plan
+          image:  dimeji45/plan
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

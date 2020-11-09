@@ -369,12 +369,7 @@ const Savings = ({ currentuser, orders }) => {
                       <div class="nk-file-info">
                         <div class="nk-file-title">
                           <div class="nk-file-icon">
-                            {/* <a onClick={handleClickOpen}>
-                              <span class="nk-file-icon-type">
-                                <img src="./assets/topup.svg" alt="topup" />
-                              </span>
-                            </a> */}
-
+                          
                             <Button
                               variant="outlined"
                               color="secondary"

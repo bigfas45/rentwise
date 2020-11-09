@@ -10,10 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: plan-mongo
+        app:  plan-mongo
     spec:
       containers:
-        - name: plan-mongo
+        - name:  plan-mongo
           image: mongo
 ---
 apiVersion: v1

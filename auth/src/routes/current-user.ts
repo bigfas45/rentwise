@@ -10,6 +10,8 @@ router.get('/api/users/currentuser', currentUser, (req : Request, res : Response
    
 });
 
+
+
 export {
     router as currentUserRouter
 };

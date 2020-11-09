@@ -10,4 +10,5 @@ router.get('/api/subscription', requireAuth, async (req: Request, res: Response)
    res.send(subscriptions);
 } );
 
+
 export {router as indexSubRouter }

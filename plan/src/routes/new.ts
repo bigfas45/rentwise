@@ -11,6 +11,7 @@ import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
+
 router.post(
   '/api/plan',
   requireAuth,

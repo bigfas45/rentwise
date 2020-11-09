@@ -50,7 +50,7 @@ spec:
   selector:
     app: subscription
   ports:
-    - name: subscription
+    - name:  subscription
       protocol: TCP
       port: 8080
       targetPort: 8080

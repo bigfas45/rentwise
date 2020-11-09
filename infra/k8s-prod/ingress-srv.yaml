@@ -13,7 +13,7 @@ spec:
           - path: /api/subscription/?(.*)
             backend:
               serviceName: subscription-srv
-              servicePort: 8080
+              servicePort:  8080
           - path: /api/users/?(.*)
             backend:
               serviceName: auth-srv

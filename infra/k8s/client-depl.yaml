@@ -13,7 +13,7 @@ spec:
         app: client
     spec:
       containers:
-        - name: client
+        - name:  client
           image: dimeji45/client
           env:
             - name: JWT_KEY

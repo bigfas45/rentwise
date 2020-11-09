@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: expiration-redis
+        app:  expiration-redis
     spec:
       containers:
         - name: expiration-redis

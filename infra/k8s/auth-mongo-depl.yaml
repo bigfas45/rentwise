@@ -6,7 +6,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth-mongo
+      app:  auth-mongo
   template:
     metadata:
       labels:
