@@ -2,7 +2,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SEND_GRID);
+sgMail.setApiKey(process.env.SENDGRID);
 
 export const EmailUsers = async (
   req: Request,
@@ -13,7 +13,7 @@ export const EmailUsers = async (
 
   const emailData = {
     to: `${emailTo}`, // admin
-    from: 'noreply@rentwise.com',
+    from: 'afasina@nasdng.com',
     subject: ` ${subject}`,
     html: `
 <body width="100%" style="margin: 0 auto !important;padding: 0 !important;mso-line-height-rule: exactly;background-color: #f5f6fa;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 14px;margin-bottom: 10px;line-height: 24px;color: #8094ae;font-weight: 400;height: 100% !important;width: 100% !important;font-family: 'Roboto', sans-serif !important;">

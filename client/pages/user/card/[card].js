@@ -1,33 +1,33 @@
 import { Fragment, useEffect, useState } from 'react';
-import Layout from '../../components/layout';
-import SideBar from '../../components/user/side-bar';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import Layout from '../../../components/layout';
+import SideBar from '../../../components/user/side-bar';
+import Header from '../../../components/header';
+import Footer from '../../../components/footer';
 import Router, { useRouter } from 'next/router';
 import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
 import { PaystackButton } from 'react-paystack';
-import useRequest from '../../hooks/use-request';
-import useRequest2 from '../../hooks/use-request2';
+import useRequest from '../../../hooks/use-request';
+import useRequest2 from '../../../hooks/use-request2';
 
 // import PaymentCard from 'react-payment-card-component';
 
-const Payment = ({ currentuser }) => {
+const Payment = ({ currentuser, OrderId }) => {
   const router = useRouter();
+
 
   const [refre, setRefre] = useState('');
   const [card, setCard] = useState('');
 
+  const { doRequest2, errors2, loading2 } = useRequest2({
+    url: `/api/orders/card/${currentuser.id}`,
+    method: 'get',
+    body: {},
 
-    const { doRequest2, errors2, loading2 } = useRequest2({
-      url: `/api/orders/card/${currentuser.id}`,
-      method: 'get',
-      body: {},
-
-      onSuccess: (data) => {
-        setCard(data);
-      },
-    });
+    onSuccess: (data) => {
+      setCard(data);
+    },
+  });
 
   useEffect(() => {
     currentuser && currentuser.userType === 0
@@ -52,11 +52,12 @@ const Payment = ({ currentuser }) => {
     },
 
     onSuccess: (data) => {
-      Router.push('/user/payment');
+      Router.push(
+        '/user/subscription/[subscription_user_plan]',
+        `/user/subscription/${OrderId}`
+      );
     },
   });
-
-
 
   const componentProps = {
     ...config,
@@ -291,8 +292,9 @@ const Payment = ({ currentuser }) => {
 };
 
 Payment.getInitialProps = async (context, client, currentuser) => {
-  // const data  = await client.get(`/api/orders/card`);
-  // return { card: data };
+  const { card } = context.query;
+
+  return { OrderId: card };
 };
 
 export default Payment;

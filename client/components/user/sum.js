@@ -2,18 +2,18 @@ import { Fragment, useState, useEffect } from 'react';
 import Link from 'next/link';
 import useRequest from '../../hooks/use-request';
 
-const Sum = ({ orderId }) => {
+const Sum = ({ planId }) => {
   const [state, setState] = useState('');
 
   const { doRequest, errors, loading } = useRequest({
-    url: `/api/subscription/${orderId}`,
+    url: `/api/subscription/webhook/${planId}`,
     method: 'get',
     body: {},
 
     onSuccess: (data) => {
       var payments = 0;
       data.map((pay, i) => {
-        var payment = pay.order.amount;
+        var payment = pay.amount /100;
         payments += payment;
       });
 

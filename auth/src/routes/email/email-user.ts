@@ -2,8 +2,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { BadRequestError } from '@rentwise/common';
 
-const mailgun = require("mailgun-js");
-const DOMAIN = 'nasdotcng.com';
+const sgMail = require('@sendgrid/mail');
+  sgMail.setApiKey(process.env.SENDGRID);
 
 
 export const emailP = async (
@@ -12,11 +12,10 @@ export const emailP = async (
   next: NextFunction
 ) => {
   const { subject, body, firstname, lastname, emailTo } = req.body;
-  const mg = mailgun({apiKey: process.env.MAILGUN, domain: DOMAIN});
 
   const emailData = {
     to: `${emailTo}`, // admin
-    from: 'noreply@rentwise.com',
+    from: 'afasina@nasdng.com',
     subject: ` ${subject}`,
     html: `
 <body width="100%" style="margin: 0 auto !important;padding: 0 !important;mso-line-height-rule: exactly;background-color: #f5f6fa;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 14px;margin-bottom: 10px;line-height: 24px;color: #8094ae;font-weight: 400;height: 100% !important;width: 100% !important;font-family: 'Roboto', sans-serif !important;">
@@ -70,8 +69,6 @@ export const emailP = async (
         `,
   };
   // @ts-ignore
-  mg.messages().send(data, function (error, body) {
-    console.log(body);
-  });
+ sgMail.send(emailData).then((sent) => console.log('SENT 2 >>>')).catch((err) => console.log('ERR 2 >>>', err));
   next();
 };

@@ -31,11 +31,11 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
-            - name: MAILGUN
+            - name: SENDGRID
               valueFrom:
                 secretKeyRef:
-                  name: mailgun-secret
-                  key: MAILGUN
+                  name: send-grid-secret
+                  key: SENDGRID
 
 ---
 apiVersion: v1

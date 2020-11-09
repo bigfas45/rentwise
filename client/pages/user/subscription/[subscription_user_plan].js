@@ -29,7 +29,7 @@ const SubPlan = ({ currentuser, order }) => {
     reference: refre,
     email: currentuser.email,
     amount: 100 * 100,
-    publicKey: 'pk_test_a3c6eed2d7700ebb41bf5417adeee9ae037f0fdc',
+    publicKey: 'pk_live_40d7d6c1c2185ec5b8ffba9bf33aca88110956db',
   };
   const [state, setState] = useState('');
 
@@ -53,11 +53,12 @@ const SubPlan = ({ currentuser, order }) => {
     },
 
     onSuccess: (data) => {
-      setOpenCard(false);
+    
       router.push(
         '/user/subscription/[subscription_user_plan]',
         `/user/subscription/${order.id}`
       );
+        setOpenCard(false);
     },
   });
 
@@ -73,13 +74,7 @@ const SubPlan = ({ currentuser, order }) => {
     },
   };
 
-  const toast = () => {
-    const { addToast } = useToasts();
-    addToast('content', {
-      appearance: 'error',
-      autoDismiss: true,
-    });
-  };
+
 
 
   const { doRequest, errors, loading } = useRequest({
@@ -355,8 +350,7 @@ const SubPlan = ({ currentuser, order }) => {
                         </DialogTitle>
                         <DialogContent>
                           <DialogContentText id="alert-dialog-description">
-                            To add and verify your card ₦ 100 will be charged
-                            and saved into your plan
+                           Your subscription will be active if you proceed.
                           </DialogContentText>
                         </DialogContent>
                         <DialogActions>

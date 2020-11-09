@@ -99,13 +99,13 @@
     "keys": [
       {
         "id": 700494,
-        "key": "pk_test_a3c6eed2d7700ebb41bf5417adeee9ae037f0fdc",
+        "key": "pk_live_40d7d6c1c2185ec5b8ffba9bf33aca88110956db",
         "domain": "test",
         "type": "public"
       },
       {
         "id": 1013681,
-        "key": "sk_test_57c8ea757206e92301543f914d45843ab9466bcf",
+        "key": "sk_live_6a3b0c48e9ed24166bb496e39f2fe4047cfb681a",
         "domain": "test",
         "type": "secret"
       }

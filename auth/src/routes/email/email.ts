@@ -1,9 +1,8 @@
 // require on top
 import express, { Request, Response, NextFunction } from 'express';
 
-const mailgun = require("mailgun-js");
-const DOMAIN = 'nasdotcng.com';
-
+const sgMail = require('@sendgrid/mail');
+  sgMail.setApiKey(process.env.SENDGRID);
 
 export const email = async (
   req: Request,
@@ -12,10 +11,9 @@ export const email = async (
 ) => {
   const { email, firstname, lastname } = req.body;
 
-  const mg = mailgun({apiKey: process.env.MAILGUN, domain: DOMAIN});
 
-  const data = {
-    from: 'noreply@rentwise.com',
+  const emailData = {
+    from: 'afasina@nasdng.com',
     to: `${email}`,
     subject: `Dear ${lastname}`,
     html: `
@@ -103,8 +101,7 @@ export const email = async (
 `
   };
   // @ts-ignore
-  mg.messages().send(data, function (error, body) {
-    console.log(body);
-  });
+ sgMail.send(emailData).then((sent) => console.log('SENT 2 >>>')).catch((err) => console.log('ERR 2 >>>', err));
+
   next();
 };

@@ -45,7 +45,7 @@ var options = {
   'method': 'POST',
   'url': 'https://api.paystack.co/subscription',
   'headers': {
-    'Authorization': 'Bearer sk_test_57c8ea757206e92301543f914d45843ab9466bcf',
+    'Authorization': 'Bearer sk_live_6a3b0c48e9ed24166bb496e39f2fe4047cfb681a',
     'Content-Type': 'application/json'
   },
   form: {

@@ -21,6 +21,11 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
+            - name: PAYSTACK
+              valueFrom:
+                secretKeyRef:
+                  name: paystack-secret-live
+                  key: PAYSTACK
 ---
 apiVersion: v1
 kind: Service

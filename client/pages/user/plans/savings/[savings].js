@@ -22,7 +22,7 @@ const Savings = ({ currentuser, orders }) => {
     email: currentuser.email,
     plan: orders.plan_code,
     amount: 100 * 100,
-    publicKey: 'pk_test_a3c6eed2d7700ebb41bf5417adeee9ae037f0fdc',
+    publicKey: 'pk_live_40d7d6c1c2185ec5b8ffba9bf33aca88110956db',
   };
 
   const router = useRouter();
@@ -46,7 +46,7 @@ const Savings = ({ currentuser, orders }) => {
 
   const TPayment = () => {
     const { doRequest, errors, loading } = useRequest({
-      url: `/api/subscription/${orders.id}`,
+      url: `/api/subscription/webhook/${orders.plan_code}`,
       method: 'get',
       body: {},
 
@@ -55,7 +55,7 @@ const Savings = ({ currentuser, orders }) => {
         console.log(data);
         var payments = 0;
         data.map((pay, i) => {
-          var payment = pay.order.amount;
+          var payment = pay.amount / 100;
           payments += payment;
         });
 
@@ -126,7 +126,7 @@ const Savings = ({ currentuser, orders }) => {
                   <span>Date</span>
                 </div>
                 <div class="nk-tb-col tb-col-xxl">
-                  <span>Time</span>
+                  <span>Time </span>
                 </div>
                 <div class="nk-tb-col tb-col-xxl">
                   <span>Ref</span>
@@ -161,7 +161,7 @@ const Savings = ({ currentuser, orders }) => {
 
                     <div class="nk-tb-col tb-col-sm text-right">
                       <span class="tb-sub tb-amount">
-                        {/* {s.order.amount}  <span>NGN</span> */}
+                        {s.amount} <span>NGN</span>
                       </span>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ const Savings = ({ currentuser, orders }) => {
                       <sup>₦</sup>{' '}
                       <b style={{ fontSize: '25px' }}>
                         {/* subscribtion totaln */}
-                        {/* {state} */}
+                        {state}
                       </b>
                       .00
                     </p>
@@ -369,43 +369,72 @@ const Savings = ({ currentuser, orders }) => {
                       <div class="nk-file-info">
                         <div class="nk-file-title">
                           <div class="nk-file-icon">
-                            <a onClick={handleClickOpen}>
+                            {/* <a onClick={handleClickOpen}>
                               <span class="nk-file-icon-type">
                                 <img src="./assets/topup.svg" alt="topup" />
                               </span>
-                            </a>
+                            </a> */}
+
+                            <Button
+                              variant="outlined"
+                              color="secondary"
+                              style={{ marginLeft: '67%', marginRight: '5%' }}
+                              onClick={handleClickOpen}
+                            >
+                              <span class="nk-file-icon-type">
+                                <img src="./assets/topup.svg" alt="topup" />
+                              </span>
+                            </Button>
                           </div>
                           <div class="nk-file-name">
                             <div class="nk-file-name-text">
-                              <a onClick={handleClickOpen} class="title">
-                                <Dialog
-                                  open={open}
-                                  onClose={handleClose}
-                                  aria-labelledby="alert-dialog-title"
-                                  aria-describedby="alert-dialog-description"
-                                >
-                                  <DialogTitle id="alert-dialog-title">
-                                    {'Charges'}
-                                  </DialogTitle>
-                                  <DialogContent>
-                                    <DialogContentText id="alert-dialog-description">
-                                      Your {orders.interval} due of{' '}
-                                      {orders.amount} will be charged
-                                    </DialogContentText>
-                                  </DialogContent>
-                                  <DialogActions>
-                                    <Button
-                                      onClick={handleClose}
-                                      color="primary"
-                                    >
-                                      Cancel
-                                    </Button>
+                              {/* <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                              >
+                                <DialogTitle id="alert-dialog-title">
+                                  {'Charges'}
+                                </DialogTitle>
+                                <DialogContent>
+                                  <DialogContentText id="alert-dialog-description">
+                                    Your {orders.interval} due of{' '}
+                                    {orders.amount} will be charged
+                                  </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                  <Button onClick={handleClose} color="primary">
+                                    Cancel
+                                  </Button>
 
-                                    <PaystackButton {...componentProps} />
-                                  </DialogActions>
-                                </Dialog>
-                                Top Up
-                              </a>
+                                  <PaystackButton {...componentProps} />
+                                </DialogActions>
+                              </Dialog> */}
+                              <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                              >
+                                <DialogTitle id="alert-dialog-title">
+                                  {'Charges'}
+                                </DialogTitle>
+                                <DialogContent>
+                                  <DialogContentText id="alert-dialog-description">
+                                    Your {orders.interval} due of{' '}
+                                    {orders.amount} will be charged
+                                  </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                  <Button onClick={handleClose} color="primary">
+                                    Cancel
+                                  </Button>
+                                  <PaystackButton {...componentProps} />
+                                  {errors}
+                                </DialogActions>
+                              </Dialog>
+                              Top Up
                             </div>
                           </div>
                         </div>

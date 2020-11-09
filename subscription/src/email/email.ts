@@ -3,7 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { BadRequestError } from '@rentwise/common';
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SEND_GRID);
+sgMail.setApiKey(process.env.SENDGRID);
 
 export const email = async (
   req: Request,
@@ -14,7 +14,7 @@ export const email = async (
 
   const emailData = {
     to: `${email}`, // admin
-    from: 'noreply@rentwise.com',
+    from: 'afasina@nasdng.com',
     subject: `Dear ${lastname}`,
     html: `
             <!DOCTYPE html>

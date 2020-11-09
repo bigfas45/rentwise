@@ -31,7 +31,7 @@ var options = {
   'method': 'GET',
   'url': `https://api.paystack.co/bank/resolve?account_number=${bank_account}&bank_code=${bank_code}`,
   'headers': {
-    'Authorization': 'Bearer sk_test_57c8ea757206e92301543f914d45843ab9466bcf'
+    'Authorization': 'Bearer sk_live_6a3b0c48e9ed24166bb496e39f2fe4047cfb681a'
   },
   formData: {
 

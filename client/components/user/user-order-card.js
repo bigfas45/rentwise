@@ -100,7 +100,7 @@ const UserCard = ({ currentuser, order }) => {
                         {' '}
                         <h6>
                           <sup>₦</sup>
-                          <Sum orderId={order.id}></Sum>
+                          <Sum planId={order.plan_code}></Sum>
                           .00
                         </h6>
                       </div>

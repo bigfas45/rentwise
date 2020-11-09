@@ -23,6 +23,7 @@ import {
 import { TextField } from 'formik-material-ui';
 import { Field, Form, Formik, useField } from 'formik';
 import { object, mixed, number, string, array, date } from 'yup';
+import useRequest3 from '../../hooks/use-request3';
 
 
 
@@ -41,6 +42,18 @@ const SelectPlan = ({ currentuser, plan }) => {
   const [expiresAt, SetExpiresAt] = useState('');
   // const [interval, SetInterval] = useState('');
   const [interval, SetDebitType2] = useState('');
+  const [state, setState] = useState('');
+
+  const { doRequest3, errors3, loading3 } = useRequest3({
+    url: `/api/orders/card/${currentuser.id}`,
+    method: 'get',
+    body: {},
+    onSuccess: (data) => {
+      console.log(data)
+      setState(data.customer.customer_code);
+    },
+  });
+
 
 
   const { doRequest, errors, loading } = useRequest({
@@ -58,16 +71,24 @@ const SelectPlan = ({ currentuser, plan }) => {
     },
 
     onSuccess: (data) =>
-      Router.push(
-        '/user/subscription/[subscription_user_plan]',
-        `/user/subscription/${data.id}`
-      ),
+    {
+      if (state) {
+          Router.push(
+            '/user/subscription/[subscription_user_plan]',
+            `/user/subscription/${data.id}`
+          );
+      } else {
+Router.push('/user/card/[card]', `/user/card/${data.id}`);      }
+      
+    
+     }
   });
 
   useEffect(() => {
     currentuser && currentuser.userType === 0
       ? ''
       : Router.push('/auth/signin');
+    doRequest3();
   }, []);
 
   return currentuser ? (
@@ -100,7 +121,7 @@ const SelectPlan = ({ currentuser, plan }) => {
                       expiresAt: '',
                     }}
                     onSubmit={async (values) => {
-                      await sleep(7000);
+                      await sleep(300);
 
                       console.log('values', values);
 

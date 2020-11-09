@@ -19,6 +19,7 @@ const MyPlan = ({ currentuser }) => {
     body: {},
 
     onSuccess: (orders) => {
+      console.log(orders)
       setOrders(orders);
     },
   });
@@ -39,100 +40,102 @@ const MyPlan = ({ currentuser }) => {
             <div className="row">
               <Carousel breakPoints={breakPoints}>
                
-                  {order &&
-                    order.map((order, i) => {
-                      return (
-                        <div
-                          className="col-lg-12"
+                {order &&
+                
+                  order.map((order, i) => {
+                      
+                    return (
+                      <div
+                        className="col-lg-12"
+                        style={{
+                          paddingLeft: '1.5rem',
+                          paddingRight: '1.5rem',
+                          paddingTop: '2rem',
+                          paddingBottom: '2rem',
+                        }}
+                        key={i}
+                      >
+                        <Link
+                          href="/user/plans/savings/[savings]"
+                          as={`/user/plans/savings/${order.id}`}
                           style={{
-                            paddingLeft: '1.5rem',
-                            paddingRight: '1.5rem',
-                            paddingTop: '2rem',
-                            paddingBottom: '2rem',
+                            fontWeight: '500',
+                            color: '#0066f5',
+                            fontSize: '1rem',
+                            textDecoration: 'none',
                           }}
-                          key={i}
                         >
-                          <Link
-                            href="/user/plans/savings/[savings]"
-                            as={`/user/plans/savings/${order.id}`}
-                            style={{
-                              fontWeight: '500',
-                              color: '#0066f5',
-                              fontSize: '1rem',
-                              textDecoration: 'none',
-                            }}
-                          >
-                            <div className="card">
-                              <div
-                                className="card__list__item active"
-                                style={{
-                                  backgroundColor: '#a3d4fb',
-                                  height: '200px!important',
-                                  width: '100%',
-                                }}
-                              >
-                                <div className="card__list__item__row">
-                                  <div
-                                    className="card__list__item__name"
-                                    style={{ textAlign: 'right !important' }}
-                                  ></div>
-                                  <div
-                                    className="card__list__item__icon"
-                                    style={{ marginRight: '5%  !important' }}
+                          <div className="card">
+                            <div
+                              className="card__list__item active"
+                              style={{
+                                backgroundColor: '#a3d4fb',
+                                height: '200px!important',
+                                width: '100%',
+                              }}
+                            >
+                              <div className="card__list__item__row">
+                                <div
+                                  className="card__list__item__name"
+                                  style={{ textAlign: 'right !important' }}
+                                ></div>
+                                <div
+                                  className="card__list__item__icon"
+                                  style={{ marginRight: '5%  !important' }}
+                                >
+                                  <button
+                                    className="btn"
+                                    style={{
+                                      backgroundColor: ' #2f87ff',
+                                      color: 'white',
+                                      fontFamily: 'Times New Roman',
+                                      fontSize: '12px',
+                                    }}
                                   >
-                                    <button
-                                      className="btn"
-                                      style={{
-                                        backgroundColor: ' #2f87ff',
-                                        color: 'white',
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: '12px',
-                                      }}
-                                    >
-                                      {order.plan ? order.plan.title : ''}
-                                    </button>
-                                  </div>
+                                    {order.plan ? order.plan.title : ''}
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div className="card__list__item__numbers">
+                                <div className="card__list__item__numbers__item">
+                                  <h6>{order.name}</h6>
                                 </div>
 
-                                <div className="card__list__item__numbers">
-                                  <div className="card__list__item__numbers__item">
-                                    <h6>{order.name}</h6>
-                                  </div>
+                                <div
+                                  className="card__list__item__numbers__item"
+                                  style={{ marginRight: '2%' }}
+                                ></div>
+                              </div>
 
+                              <div className="card__list__item__row">
+                                <div className="card__list__item__balance">
+                                  {' '}
+                                  <h6>
+                                    <sup>₦</sup>
+                                    <Sum planId={order.plan_code}></Sum>
+                                    .00
+                                  </h6>
+                                </div>
+                                <div className="vl"></div>
+
+                                <div className="card__list__item__valid">
+                                  <div className="card__list__item__valid__title">
+                                    <h3> {order.plan.returnPercentage}% </h3>
+                                  </div>
                                   <div
-                                    className="card__list__item__numbers__item"
-                                    style={{ marginRight: '2%' }}
-                                  ></div>
-                                </div>
-
-                                <div className="card__list__item__row">
-                                  <div className="card__list__item__balance">
-                                    {' '}
-                                    <h6>
-                                      <sup>₦</sup>
-                                      <Sum orderId={order.id}></Sum>
-                                      .00
-                                    </h6>
-                                  </div>
-                                  <div className="vl"></div>
-
-                                  <div className="card__list__item__valid">
-                                    <div className="card__list__item__valid__title">
-                                      <h3> {order.plan.returnPercentage}% </h3>
-                                    </div>
-                                    <div
-                                      className="card__list__item__valid__value"
-                                      style={{ color: '#364a63' }}
-                                    >
-                                      Interest p.a.
-                                    </div>
+                                    className="card__list__item__valid__value"
+                                    style={{ color: '#364a63' }}
+                                  >
+                                    Interest p.a.
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </Link>
-                        </div>
-                      );
+                          </div>
+                        </Link>
+                      </div>
+                    );
                     })}
                
               </Carousel>

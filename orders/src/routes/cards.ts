@@ -14,6 +14,7 @@ router.get('/api/orders/card/:userId', requireAuth, async (req: Request, res: Re
       if (!card) {
         throw new BadRequestError('Card details not found. Kindly add your card to proceed.');
   }
+  
 
 
 
@@ -23,7 +24,7 @@ var options = {
   'method': 'GET',
   'url': `https://api.paystack.co/transaction/verify/${card.reference}`,
   'headers': {
-    'Authorization': 'Bearer sk_test_57c8ea757206e92301543f914d45843ab9466bcf'
+    'Authorization': 'Bearer sk_live_6a3b0c48e9ed24166bb496e39f2fe4047cfb681a'
   },
   formData: {
 
@@ -33,7 +34,6 @@ var options = {
 request(options, function (error, response) {
   if (error) throw new Error(error);
  const data = JSON.parse(response.body)
-  console.log(data.data);
   res.send(data.data);
 });  
   
