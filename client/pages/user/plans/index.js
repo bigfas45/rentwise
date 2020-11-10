@@ -39,7 +39,7 @@ const Plan = ({ currentuser, orders }) => {
                       <ul className="nav nav-tabs">
                         <li className="nav-item">
                           <a className="nav-link active">
-                            <span>Savings</span>
+                            <span>Savings.</span>
                           </a>
                         </li>
                       </ul>
