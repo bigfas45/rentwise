@@ -150,7 +150,7 @@
     "flat_threshhold": 2500,
     "transfer_charge": 5000,
     "settlement_schedule": "T1",
-    "test_redirect_url": "https://www.rentwise.ng/user/payment",
+    "test_redirect_url": "https://www.rentwise.com.ng/user/payment",
     "test_webhook_endpoint": "https://a835caefa156.ngrok.io/api/plan",
     "live_redirect_url": null,
     "live_webhook_endpoint": null,
