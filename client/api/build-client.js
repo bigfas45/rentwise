@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const buildClient = ({ req }) => {
   if (typeof window === 'undefined') {
-    // We are on the server
+    // We are on the servers
 
     return axios.create({
       baseURL: 'http://www.rentwise.com.ng/',
