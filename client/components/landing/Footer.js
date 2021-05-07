@@ -3,6 +3,9 @@ import useRequest from '../../hooks/use-request';
 import { Spinner, Button } from 'reactstrap';
 
 const Footer = () => {
+
+
+
   const NewLetter = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState('');
@@ -27,61 +30,63 @@ const Footer = () => {
       doRequest();
     };
     return (
-      <div className="subscribe-box">
-        <div className="container">
-          <div className="row subscribe-inner align-items-center">
-            <div className="col-md-6 col-sm-12">
-              <h4>Subscribe Our Newsletter</h4>
-              <p className="lead mb-0">
-                Get started for 1 Month free trial No Purchace required.
-              </p>
-            </div>
-            <div className="col-md-6 col-sm-12 sm-mt-2">
-              <div className="subscribe-form sm-mt-2">
-                <form onSubmit={onSubmit} id="mc-form" className="group">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    name="EMAIL"
-                    className="email"
-                    id="mc-email"
-                    placeholder="Email Address"
-                    required=""
-                  />
-                  {/* <input
-                  className="btn btn-theme"
-                  type="submit"
-                  name="subscribe"
-                  value="Subscribe"
-                /> */}
-                  {loading && loading ? (
-                    <Button
-                      className="btn btn-theme"
-                      variant="success"
-                      disabled
-                    >
-                      <Spinner
-                        as="span"
-                        animation="grow"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                      />
-                      Loading...
-                    </Button>
-                  ) : (
-                    <input
-                      className="btn btn-theme"
-                      type="submit"
-                      name="subscribe"
-                      value="Subscribe"
+      <div
+        className="section rounded px-4 section-mobile"
+        style={{
+          background:
+            "url('demos/covid-care/images/illustration/bg-pattern.svg') no-repeat center left / contain",
+          backgroundColor: '#f1f6fd',
+        }}
+      >
+        <div className="row justify-content-center align-items-center">
+          <div className="col-lg-5">
+            <h3 className="mb-4 mb-lg-0">
+              Sign up for Updates &amp; Newsletters.
+            </h3>
+          </div>
+          <div className="col-lg-6">
+            <div className="widget subscribe-widget" data-loader="button">
+              <div className="widget-subscribe-form-result"></div>
+              <form
+                id="widget-subscribe-form"
+                onSubmit={onSubmit}
+                className="mb-0 d-flex"
+              >
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  id="widget-subscribe-form-email"
+                  name="widget-subscribe-form-email"
+                  className="form-control form-control-lg not-dark required email"
+                  placeholder="Your Email Address"
+                />
+                {loading && loading ? (
+                  <Button
+                    class="button button-large button-black button-dark font-weight-medium ls0 button-rounded m-0 ml-3"
+                    variant="success"
+                    disabled
+                  >
+                    <Spinner
+                      as="span"
+                      animation="grow"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
                     />
-                  )}{' '}
-                  {errors}
-                  {success}
-                </form>
-              </div>
+                    Loading...
+                  </Button>
+                ) : (
+                  <input
+                    class="button button-large button-black button-dark font-weight-medium ls0 button-rounded m-0 ml-3"
+                    type="submit"
+                    name="subscribe"
+                    value="Subscribe Now"
+                  />
+                )}{' '}
+              </form>
+              {errors}
+              {success}
             </div>
           </div>
         </div>
@@ -91,112 +96,91 @@ const Footer = () => {
 
   return (
     <Fragment>
-      <footer
-        className="footer footer-1 pos-r"
-        data-bg-img="/assets/landing/assets/images/pattern/03.png"
-      >
-        <div
-          className="footer-wave"
-          data-bg-img="/assets/landing/assets/images/bg/08.png"
-        ></div>
-
-        {NewLetter()}
-
-        <div className="primary-footer">
+      {NewLetter()}
+      <footer id="footer" className="blue">
+        <div id="copyrights">
           <div className="container">
-            <div className="row">
-              <div className="col-lg-4 col-md-6">
-                <div className="footer-logo">
-                  <img
-                    id="footer-logo-white-img"
-                    src="/assets/images/rentWise.PNG"
-                    className="img-center"
-                    alt=""
-                  />
+            <div className="row col-mb-30">
+              <div className="col-md-6 text-center text-md-left">
+                Copyrights &copy; 2021 All Rights Reserved by RentWise.
+                <br />
+                <div className="copyright-links">
+                  <a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
                 </div>
-                <p className="mb-0">
-                  RentWise is an online savings platform owned by PennyWise MFB.
-                </p>
               </div>
-              <div className="col-lg-4 col-md-6 pl-md-5 sm-mt-5 footer-list justify-content-between d-flex">
-                <ul className="list-unstyled w-100">
-                  <li>
-                    <a href="/aboutus">About Us</a>
-                  </li>
-                  <li>
-                    <a href="/plans">Plans</a>
-                  </li>
 
-                  <li>
-                    <a href="/contact">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-4 col-md-12 md-mt-5">
-                <ul className="media-icon list-unstyled">
-                  <li>
-                    <p className="mb-0">
-                      Address: <b>Suite D5, Innovation plaza Wuye Abuja</b>
-                    </p>
-                  </li>
-                  <li>
-                    Email:{' '}
-                    <a href="mailto:themeht23@gmail.com">
-                      <b>info@rentwise.ng</b>
-                    </a>
-                  </li>
-                  <li>
-                    Phone:{' '}
-                    <a href="tel:+912345678900">
-                      <b>0815 556 7409</b>
-                    </a>
-                  </li>
-                  {/* <li>
-                    Fax:{' '}
-                    <a href="tel:+912345678900">
-                      <b>+91-234-567-8900</b>
-                    </a>
-                  </li> */}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="secondary-footer">
-          <div className="container">
-            <div className="copyright">
-              <div className="row align-items-center">
-                <div className="col-lg-6 col-md-12">
-                  {' '}
-                  <span>
-                    rentwise.ng
-                    <u>
-                      <a href="/">rentwise</a>
-                    </u>{' '}
-                    | All Rights Reserved
-                  </span>
+              <div className="col-md-6 text-center text-md-right">
+                <div className="d-flex justify-content-center justify-content-md-end">
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-facebook"
+                  >
+                    <i className="icon-facebook"></i>
+                    <i className="icon-facebook"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-twitter"
+                  >
+                    <i className="icon-twitter"></i>
+                    <i className="icon-twitter"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-gplus"
+                  >
+                    <i className="icon-gplus"></i>
+                    <i className="icon-gplus"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-pinterest"
+                  >
+                    <i className="icon-pinterest"></i>
+                    <i className="icon-pinterest"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-vimeo"
+                  >
+                    <i className="icon-vimeo"></i>
+                    <i className="icon-vimeo"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-github"
+                  >
+                    <i className="icon-github"></i>
+                    <i className="icon-github"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-yahoo"
+                  >
+                    <i className="icon-yahoo"></i>
+                    <i className="icon-yahoo"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    className="social-icon si-small si-borderless si-linkedin"
+                  >
+                    <i className="icon-linkedin"></i>
+                    <i className="icon-linkedin"></i>
+                  </a>
                 </div>
-                <div className="col-lg-6 col-md-12 text-lg-right md-mt-3">
-                  <div className="footer-social">
-                    <ul className="list-inline">
-                      <li className="mr-2">
-                        <a href="#">
-                          <i className="fab fa-facebook-f"></i> Facebook
-                        </a>
-                      </li>
-                      <li className="mr-2">
-                        <a href="#">
-                          <i className="fab fa-twitter"></i> Twitter
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-instagram"></i> Instagram
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <div className="clear"></div>
+                <i className="icon-envelope2"></i> info@rentwise.ng{' '}
+                <span className="middot">&middot;</span>{' '}
+                <i className="icon-headphones"></i> 0815 556 7409
+                <span className="middot">&middot;</span>{' '}
+                <i className="icon-skype2"></i> RentWiseOnSkype
               </div>
             </div>
           </div>

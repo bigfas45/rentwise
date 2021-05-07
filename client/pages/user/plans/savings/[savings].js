@@ -255,8 +255,8 @@ const Savings = ({ currentuser, orders }) => {
                       <sup>₦</sup>{' '}
                       <b style={{ fontSize: '25px' }}>
                         {' '}
-                        {(state / 1000) * orders.plan.returnPercentage +
-                          state}{' '}
+                       {(state / 1000) * orders.plan.returnPercentage +
+                          state}{' '} 
                       </b>
                       .00
                     </p>

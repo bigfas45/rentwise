@@ -1,6 +1,6 @@
 import buildClient from '../../api/build-client';
 import {Fragment} from "react"
-import Layout from '../../components/layout'
+import Layout from '../../components/landing/accountCreatedLayout'
 
 
 const AccountCreated = ({currentuser}) => {
@@ -9,82 +9,61 @@ const AccountCreated = ({currentuser}) => {
     const template = () => {
         return (
           <Fragment>
-            <body className="nk-body bg-white npc-general pg-auth">
-              <div className="nk-app-root">
-                <div className="nk-main ">
-                  <div className="nk-wrap nk-wrap-nosidebar">
-                    <div className="nk-content ">
-                      <div className="nk-block nk-block-middle nk-auth-body">
-                        <div className="brand-logo pb-5">
-                          <a href="html/index.html" className="logo-link">
-                            <img
-                              className="logo-light logo-img logo-img-lg"
-                              src="/assets/images/logoRent.PNG"
-                              srcSet="/assets/images/logoRent.PNG 2x"
-                              alt="logo"
-                            />
-                            <img
-                              className="logo-dark logo-img logo-img-lg"
-                              src="/assets/images/logoRent.PNG"
-                              srcSet="/assets/images/logoRent.PNG 2x"
-                              alt="logo-dark"
-                            />
-                          </a>
-                        </div>
-                        <div className="nk-block-head">
-                          <div className="nk-block-head-content">
-                            <h2 className="nk-block-title text-blue">
-                              Check your inbox
-                            </h2>
-                            <h2 className="nk-block-title text-gray">
-                              {currentuser ? currentuser.email : ''}{' '}
-                            </h2>
-                            <div>
-                              <p className="text-center">
-                                A confirmation email has been sent to the email
-                                address above. Please click the verification
-                                link in the email to sign in
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="nk-footer nk-auth-footer-full">
-                        <div className="container wide-lg">
-                          <div className="row g-3">
-                            <div className="col-lg-6 order-lg-last">
-                              <ul className="nav nav-sm justify-content-center justify-content-lg-end">
-                                <li className="nav-item">
-                                  <a className="nav-link" href="#">
-                                    Terms & Condition
-                                  </a>
-                                </li>
-                                <li className="nav-item">
-                                  <a className="nav-link" href="#">
-                                    Privacy Policy
-                                  </a>
-                                </li>
-                                <li className="nav-item">
-                                  <a className="nav-link" href="#">
-                                    Help
-                                  </a>
-                                </li>
-                                <li className="nav-item dropup">
-                                  <a
-                                    className="dropdown-toggle dropdown-indicator has-indicator nav-link"
-                                    data-toggle="dropdown"
-                                    data-offset="0,10"
-                                  >
-                                    <span>English</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="col-lg-6">
-                              <div className="nk-block-content text-center text-lg-left">
-                                <p className="text-soft">
-                                  &copy; 2020 RentWise. All Rights Reserved.
+            <section
+              id="slider"
+              class="slider-element min-vh-100 py-5 include-header"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(38,38,38,0.922), rgba(38,38,38,0.922)), url('/demos/real-estate/images/hero/3.jpg') no-repeat center center/ cover",
+              }}
+            >
+              <div class="slider-inner">
+                <div class="row justify-content-center align-items-center h-100">
+                  <div class="col-lg-4 col-sm-7 col-10 mt-sm-5">
+                    <div
+                      class="form-widget"
+                      data-loader="button"
+                      data-alert-type="inline"
+                    >
+                      <div class="tab-content" id="nav-tabContent">
+                        <div
+                          class="tab-pane show active"
+                          id="get-started-form-select-dates"
+                          role="tabpanel"
+                          aria-labelledby="get-started-form-select-dates"
+                        >
+                          <div class="row align-items-center">
+                            <div class="col-12">
+                              <div class="center mb-5 dark">
+                                <div class="brand-wrapper">
+                                  <img
+                                    src="/rentwised.png"
+                                    alt="logo"
+                                    class="logo"
+                                    width="50%"
+                                    height="50%"
+                                  />
+                                </div>
+                                <h1 class="font-weight-semibold display-4 mb-4">
+                                  Check your inbox
+                                </h1>
+                                <h1 class="font-weight-semibold display-4 mb-4">
+                                  {currentuser ? currentuser.email : ''}{' '}
+                                </h1>
+                                <p class="font-weight-normal text-white-50">
+                                  A confirmation email has been sent to the
+                                  email address above. Please click the
+                                  verification link in the email to sign in
                                 </p>
+                              
+
+                                <a
+                                  class="button button-rounded button-large tab-action-btn-next mt-5 btn-block py-3"
+                                  href="/auth/signin"
+                                  style={{ backgroundColor: '#0066f5' }}
+                                >
+                                  Signin here
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -94,7 +73,7 @@ const AccountCreated = ({currentuser}) => {
                   </div>
                 </div>
               </div>
-            </body>
+            </section>
           </Fragment>
         );
     }

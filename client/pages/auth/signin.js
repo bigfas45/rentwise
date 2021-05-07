@@ -2,7 +2,7 @@ import { useState, Fragment } from 'react';
 import Router from 'next/router';
 import useRequest from '../../hooks/use-request';
 import { Spinner, Button } from 'reactstrap';
-import Layout from '../../components/layout';
+import LayoutLogin from '../../components/layoutLogin';
 import Link from 'next/link';
 
 const Signin = () => {
@@ -17,7 +17,7 @@ const Signin = () => {
     },
 
     onSuccess: (user) => {
-      if (user.userType === 1 ) {
+      if (user.userType === 1) {
         Router.push('/admin/dashboard');
       } else {
         Router.push('/user/dashboard');
@@ -33,119 +33,60 @@ const Signin = () => {
 
   return (
     <Fragment>
-      <Layout title="Sign In" />
+      <LayoutLogin title="Sign In" />
 
-      <body className="nk-body npc-crypto bg-white pg-auth">
-        <div className="nk-app-root">
-          <div className="nk-split nk-split-page nk-split-md">
-            <div
-              className="nk-split-content nk-split-stretch bg-lighter d-flex toggle-break-lg toggle-slide toggle-slide-right"
-              data-content="athPromo"
-              data-toggle-screen="lg"
-              data-toggle-overlay="true"
-            >
-              <div className="slider-wrap w-100 w-max-550px p-3 p-sm-5 m-auto">
-                <div
-                  className="slider-init"
-                  data-slick='{"dots":true, "arrows":false}'
-                >
-                  <div className="slider-item">
-                    <div className="nk-feature nk-feature-center">
-                      <div className="nk-feature-img ml-5">
-                        <img
-                          className="round"
-                          src="https://image.freepik.com/free-vector/happy-man-making-money-online-laptop-metaphor_81522-4241.jpg"
-                          srcSet="https://image.freepik.com/free-vector/happy-man-making-money-online-laptop-metaphor_81522-4241.jpg 2x"
-                          alt=""
-                        />
-                      </div>
-                      <div className="nk-feature-content py-4 p-sm-5">
-                        <h2 className="text-blue mr-5">Welcome back,</h2>
-                        <h3 className="text-blue mr-5">Sign in to continue</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="slider-dots"></div>
-                <div className="slider-arrows"></div>
+      <main
+        class="d-flex align-items-center min-vh-100 py-3 py-md-0"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(38,38,38,0.922), rgba(38,38,38,0.922)), url('/demos/real-estate/images/hero/3.jpg') no-repeat center center/ cover",
+        }}
+      >
+        <div class="container">
+          <div class="card login-card">
+            <div class="row no-gutters">
+              <div class="col-md-5">
+                <img
+                  src="/demos/real-estate/images/hero/3.jpg"
+                  alt="login"
+                  class="login-card-img"
+                />
               </div>
-            </div>
-
-            <div className="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
-              <div className="absolute-top-right d-lg-none p-3 p-sm-5">
-                <a
-                  href="#"
-                  className="toggle btn-white btn btn-icon btn-light"
-                  data-target="athPromo"
-                >
-                  <em className="icon ni ni-info"></em>
-                </a>
-              </div>
-              <div className="nk-block nk-block-middle nk-auth-body">
-                <div className="brand-logo pb-5">
-                  <a href="html/index.html" className="logo-link">
-                    <img
-                      className="logo-light logo-img logo-img-lg"
-                      src="/assets/images/logoRent.PNG"
-                      srcSet="/assets/images/logoRent.PNG 2x"
-                      alt="logo"
-                    />
-                    <img
-                      className="logo-dark logo-img logo-img-lg"
-                      src="/assets/images/logoRent.PNG"
-                      srcSet="/assets/images/logoRent.PNG 2x"
-                      alt="logo-dark"
-                    />
-                  </a>
-                </div>
-
-                <form onSubmit={onSubmit}>
-                  <div className="form-group">
-                    <div className="form-label-group">
-                      <label className="form-label" htmlFor="default-01">
-                        Email or Username
-                      </label>
-                    </div>
-                    <input
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="Enter your email address or username"
-                    />
+              <div class="col-md-7">
+                <div class="card-body">
+                  <div class="brand-wrapper">
+                    <img src="/rentwised.png" alt="logo" class="logo" />
                   </div>
-                  <div className="form-group">
-                    <div className="form-label-group">
-                      <label className="form-label" htmlFor="password">
-                        Passcode
+                  <p class="login-card-description">Sign into your account</p>
+                  <form onSubmit={onSubmit}>
+                    <div class="form-group">
+                      <label for="email" class="sr-only">
+                        Email
                       </label>
-                      <Link href="/auth/password/forgot-password">
-                        <a className="link link-primary link-sm" tabIndex="-1">
-                          Forgot Code?
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="form-control-wrap">
-                      <a
-                        tabIndex="-1"
-                        href="#"
-                        className="form-icon form-icon-right passcode-switch"
-                        data-target="password"
-                      >
-                        <em className="passcode-icon icon-show icon ni ni-eye"></em>
-                        <em className="passcode-icon icon-hide icon ni ni-eye-off"></em>
-                      </a>
                       <input
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        type="password"
-                        className="form-control form-control-lg"
-                        id="password"
-                        placeholder="Enter your passcode"
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        id="email"
+                        class="form-control"
+                        placeholder="Email address"
                       />
                     </div>
-                  </div>
-                  <div className="form-group">
+                    <div class="form-group mb-4">
+                      <label for="password" class="sr-only">
+                        Password
+                      </label>
+                      <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        id="password"
+                        class="form-control"
+                        placeholder="***********"
+                      />
+                    </div>
                     {loading && loading ? (
                       <Button
                         className="btn btn-lg btn-primary btn-block"
@@ -164,28 +105,39 @@ const Signin = () => {
                     ) : (
                       <input
                         type="submit"
-                        className="btn btn-lg btn-primary btn-block"
-                        value="Sign In"
+                        name="login"
+                        id="login"
+                        class="btn btn-block login-btn mb-4"
+                        value="Login"
                       />
                     )}{' '}
-                  </div>
-                  {errors}{' '}
-                </form>
-                <div className="form-note-s2 pt-4">
-                  New user?
-                  <Link href="/auth/signup">
-                    <a>Create an account</a>
+                    {errors}{' '}
+                  </form>
+
+                  <Link href="/auth/password/forgot-password">
+                    <a class="forgot-password-link">Forgot Code?</a>
                   </Link>
+                  <p class="login-card-footer-text">
+                    Don't have an account?{' '}
+                    <Link href="/auth/signup">
+                      <a class="text-reset">Create an account</a>
+                    </Link>
+                  </p>
+
+                  <nav class="login-card-footer-nav">
+                    <a href="#!">Terms of use.</a>
+                    <a href="#!">Privacy policy</a>
+                  </nav>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </body>
+      </main>
     </Fragment>
   );
 };
 
-Signin.getInitialProps = async (context,client, currentuser) => {};
+Signin.getInitialProps = async (context, client, currentuser) => {};
 
 export default Signin;

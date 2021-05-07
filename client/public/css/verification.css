@@ -1,0 +1,61 @@
+
+
+		#get-started-form .dark .form-control:not(.not-dark),
+		#get-started-form .dark .form-control:not(.not-dark):active,
+		#get-started-form .dark .form-control:not(.not-dark):focus {
+			background-color: transparent;
+			border: 0;
+			border-bottom: 2px solid rgba(255,255,255,0.6);
+			padding: 0 4px;
+			text-shadow: none;
+			color: #FFF;
+		}
+
+		#get-started-form .dark .form-control:not(.not-dark):active,
+		#get-started-form .dark .form-control:not(.not-dark):focus {
+			border-color: var(--danger) !important;
+		}
+
+		#get-started-form-processing .tab-action-btn-prev {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		#get-started-form .alert-success {
+		    color: #FFF;
+		    background-color: transparent !important;
+		    border: none !important;
+		    font-size: 20px;
+		    text-align: center;
+		    line-height: 1.8;
+		}
+		.tab-pane.active {
+			-webkit-animation: scale-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+		}
+		@-webkit-keyframes scale-center {
+		  0% {
+		  	opacity: 0;
+		    -webkit-transform: scale(0.9);
+		            transform: scale(0.9);
+		  }
+		  100% {
+		  	opacity: 1;
+		    -webkit-transform: scale(1);
+		            transform: scale(1);
+		  }
+		}
+		@keyframes scale-center {
+		  0% {
+		  	opacity: 0;
+		    -webkit-transform: scale(0.9);
+		            transform: scale(0.9);
+		  }
+		  100% {
+		  	opacity: 1;
+		    -webkit-transform: scale(1);
+		            transform: scale(1);
+		  }
+		}
+
+

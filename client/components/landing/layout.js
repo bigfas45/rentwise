@@ -5,93 +5,85 @@ const Layout = ({ title = 'Rent Wise', description = 'Description' }) => {
   return (
     <Fragment>
       <Head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="/assets/landing/favicon.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="author" content="SemiColonWeb" />
+
+        {/* <!-- Stylesheets
+	============================================= --> */}
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="css/dark.css" type="text/css" />
+        <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+        {/* <!-- Crowdfunding Demo Specific Stylesheet --> */}
+        <link
+          rel="stylesheet"
+          href="demos/crowdfunding/crowdfunding.css"
+          type="text/css"
+        />
+        <link
+          rel="stylesheet"
+          href="demos/crowdfunding/css/fonts.css"
+          type="text/css"
+        />
+        {/* <!-- / --> */}
+
+        	{/* <!-- Landing Demo Specific Stylesheet --> */}
+	<link rel="stylesheet" href="demos/landing/landing.css" type="text/css" />
+        <link rel="stylesheet" href="demos/landing/css/fonts.css" type="text/css" />
+        
+
+        	{/* <!-- Covid Care Demo Specific Stylesheet --> */}
+	<link rel="stylesheet" href="demos/covid-care/covid-care.css" type="text/css" /> 
+	<link rel="stylesheet" href="demos/covid-care/css/fonts.css" type="text/css" /> 
+        {/* <!-- / --> */}
+        
+        
+
+        <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+        <link rel="stylesheet" href="css/custom.css" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
+
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="include/rs-plugin/css/settings.css"
+          media="screen"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="include/rs-plugin/css/layers.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="include/rs-plugin/css/navigation.css"
+        />
+
+        <link
+          rel="stylesheet"
+          href="css/colors0464.css?color=209EBB"
+          type="text/css"
+        />
+
         <meta name="description" content={description} />
         <title>{title}</title>
-        <link rel="apple-touch-icon" href="/assets/landing/logo192.png" />
-
-        <link rel="manifest" href="/assets/landing/manifest.json" />
-
-        <link
-          href="/assets/landing/assets/css/bootstrap.min.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i"
-          rel="stylesheet"
-        />
-        <link
-          href="/assets/landing/assets/css/animate.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/fontawesome-all.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/line-awesome.min.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/magnific-popup/magnific-popup.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/owl-carousel/owl.carousel.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/base.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/shortcodes.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/style2.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="/assets/landing/assets/css/responsive2.css"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link href="#" data-style="styles" rel="stylesheet" />
-        <link
-          href="/assets/landing/assets/css/color-customize/color-customizer.css"
-          rel="stylesheet"
-          type="text/css"
-        />
       </Head>
 
       <Head>
-        <script src="/assets/landing/assets/js/theme.js"></script>
-        <script src="/assets/landing/assets/js/menu/jquery.smartmenus.js"></script>
-        <script src="/assets/landing/assets/js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="/assets/landing/assets/js/magnific-popup/jquery.magnific-popup.min.js"></script>
-        <script src="/assets/landing/assets/js/counter/counter.js"></script>
-        <script src="/assets/landing/assets/js/countdown/jquery.countdown.min.js"></script>
-        <script src="/assets/landing/assets/js/canvas.js"></script>
-        <script src="/assets/landing/assets/js/confetti.js"></script>
-        <script src="/assets/landing/assets/js/snap.svg.js"></script>
-        <script src="/assets/landing/assets/js/step.js"></script>
-        <script src="/assets/landing/assets/js/contact-form/contact-form.js"></script>
-        <script src="/assets/landing/assets/js/wow.min.js"></script>
-        <script src="/assets/landing/assets/js/color-customize/color-customizer.js"></script>
-        <script src="/assets/landing/assets/js/theme-script.js"></script>
+     
+        <script src="js/jquery.js"></script>
+        <script src="js/plugins.min.js"></script>
+        <script src="js/functions.js"></script>
       </Head>
     </Fragment>
   );
