@@ -26,4 +26,3 @@ spec:
               value: rentwise
             - name: REDIS_HOST
               value: expiration-redis-srv
-

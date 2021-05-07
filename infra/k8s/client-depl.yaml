@@ -39,4 +39,3 @@ spec:
       protocol: TCP
       port: 3000
       targetPort: 3000
-
