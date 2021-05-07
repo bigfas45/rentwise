@@ -11,4 +11,3 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cd plan && npm install
-
