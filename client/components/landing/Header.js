@@ -21,7 +21,7 @@ const Header = ({ currentuser }) => {
                   <img src="rentwised.png" alt="Rentwise Logo" />
                 </a>
                 <a href="index.html" className="retina-logo">
-                  <img src="rentwised.png 2x" alt="Rentwise Logo" />
+                  <img src="rentwised.png" alt="Rentwise Logo" />
                 </a>
               </div>
               {/* <!-- #logo end --> */}
@@ -35,8 +35,6 @@ const Header = ({ currentuser }) => {
                     <i className="icon-line-cross"></i>
                   </a>
                 </div>
-
-               
               </div>
 
               <div id="primary-menu-trigger">
@@ -72,7 +70,7 @@ const Header = ({ currentuser }) => {
                     </a>
                   </li>
                   <li className="menu-item">
-                    <a className="menu-link" href="#">
+                    <a className="menu-link" href="/auth/signin">
                       <div>
                         <i className="icon-line2-user font-weight-semibold"></i>
                         Login
@@ -83,7 +81,7 @@ const Header = ({ currentuser }) => {
                         Not Registered Yet? Genuine Clients, 100% Trust
                         Assurance and Lowest Fees on the Market.{' '}
                         <a
-                          href="#modal-register"
+                          href="/auth/signin"
                           data-lightbox="inline"
                           className="d-block mt-2"
                         >
@@ -96,8 +94,6 @@ const Header = ({ currentuser }) => {
                 </ul>
               </nav>
               {/* <!-- #primary-menu end --> */}
-
-             
             </div>
           </div>
         </div>

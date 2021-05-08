@@ -14,6 +14,75 @@ const LandingPage = ({ currentuser }) => {
       <Fragment>
         <section id="content">
           <div>
+            <div class="row  align-content-stretch no-gutters topmargin section-mobile">
+              <div
+                class="col-md-6 order-md-2"
+                style={{
+                  background:
+                    "url('/demos/real-estate/images/hero/3.jpg') center center / cover",
+                  minHeight: '300px',
+                }}
+              ></div>
+
+              <div
+                class="col-md-6 order-md-1"
+                style={{ backgroundColor: '#0066f5' }}
+              >
+                <div class="section-features">
+                  <h2
+                    class="mb-3 h4 font-weight-bold"
+                    style={{ color: 'white' }}
+                  >
+                    Flexible plans and attractive interest rates
+                  </h2>
+                  <p
+                    class="h6 font-weight-normal mb-5"
+                    style={{ color: 'white' }}
+                  >
+                    {' '}
+                    Whatever your goals, short term or long term, we got you
+                    covered with great returns on savings. Consider us the
+                    savings platform with investment benefits
+                  </p>
+
+                  <h2
+                    class="mb-3 h4 font-weight-bold"
+                    style={{ color: 'white' }}
+                  >
+                    All your housing solutions in one place
+                  </h2>
+                  <p class="h6 font-weight-normal" style={{ color: 'white' }}>
+                    <ul>
+                      <li>Savings – Various savings plans to choose from</li>
+                      <li>Loans – Get a loan to cover your housing needs</li>
+                      <li>
+                        Mortgage – Own your house with just 20% down payment
+                      </li>
+                      <li>
+                        Rent2Own – Pay rent over a period and a lump sum to own
+                        properties
+                      </li>
+                    </ul>
+                  </p>
+
+                  <h2
+                    class="mb-3 h4 font-weight-semibold"
+                    style={{ color: 'white' }}
+                  >
+                    Completely exploit focused.
+                  </h2>
+                  <p
+                    class="h6 font-weight-normal mb-0"
+                    style={{ color: 'white' }}
+                  >
+                    Continually enable leveraged users after functional
+                    web-readiness. Interactively conceptualize accurate
+                    resources whereas distinctive e-markets.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
             <div class="section bg-transparent mb-0 pb-0 border-0 ">
               <div class="container bg-color-light border-0 rounded-lg p-4 p-md-5">
                 <div class="row justify-content-between align-items-center bottommargin-sm">
@@ -93,78 +162,6 @@ const LandingPage = ({ currentuser }) => {
               </div>
             </div>
             {/* here */}
-
-            <div class="row  align-content-stretch no-gutters topmargin section-mobile">
-              <div
-                class="col-md-6 order-md-2"
-                style={{
-                  background:
-                    "url('/demos/real-estate/images/hero/3.jpg') center center / cover",
-                  minHeight: '300px',
-                }}
-              ></div>
-
-              <div
-                class="col-md-6 order-md-1"
-                style={{ backgroundColor: '#0066f5' }}
-              >
-                <div class="section-features">
-                  <h2
-                    class="mb-3 h4 font-weight-bold"
-                    style={{ color: 'white' }}
-                  >
-                    Flexible plans and attractive interest rates
-                  </h2>
-                  <p
-                    class="h6 font-weight-normal mb-5"
-                    style={{ color: 'white' }}
-                  >
-                    {' '}
-                    Whatever your goals, short term or long term, we got you
-                    covered with great returns on savings. Consider us the
-                    savings platform with investment benefits
-                  </p>
-
-                  <h2
-                    class="mb-3 h4 font-weight-bold"
-                    style={{ color: 'white' }}
-                  >
-                    All your housing solutions in one place
-                  </h2>
-                  <p class="h6 font-weight-normal" style={{ color: 'white' }}>
-                    <ul>
-                      <li>Savings – Various savings plans to choose from</li>
-                      <li>Loans – Get a loan to cover your housing needs</li>
-                      <li>
-                        Mortgage – Own your house with just 20% down payment
-                      </li>
-                      <li>
-                        Rent2Own – Pay rent over a period and a lump sum to own
-                        properties
-                      </li>
-                    </ul>
-                  </p>
-                  
-
-                  <h2
-                    class="mb-3 h4 font-weight-semibold"
-                    style={{ color: 'white' }}
-                  >
-                    Completely exploit focused.
-                  </h2>
-                  <p
-                    class="h6 font-weight-normal mb-0"
-                    style={{ color: 'white' }}
-                  >
-                    Continually enable leveraged users after functional
-                    web-readiness. Interactively conceptualize accurate
-                    resources whereas distinctive e-markets.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="clear"></div>
 
             <div class="section border-0 bg-transparent mb-1">
               <div class="container">
@@ -291,6 +288,8 @@ const LandingPage = ({ currentuser }) => {
                 </div>
               </div>
             </div>
+
+            <div class="clear"></div>
           </div>
         </section>
       </Fragment>
@@ -353,9 +352,14 @@ const LandingPage = ({ currentuser }) => {
                 <div class="row">
                   <div class="col-lg-6 col-md-8">
                     <div class="slider-title">
-                      <h1 class="font-weight-bold" style={{ color: '#022b69' }}>
+                      <h1 class="font-weight-bold">
                         {' '}
-                        Housing solution made easy
+                        <h1
+                        
+                          style={{ color: '#022b69' }}
+                        >
+                          Housing solution<br/> made easy
+                        </h1>
                       </h1>
                       <h4
                         class="font-weight-semibold"
@@ -367,20 +371,20 @@ const LandingPage = ({ currentuser }) => {
                       </h4>
                     </div>
                     <a
-                      href="#modal-register"
+                      href="/auth/signin"
                       data-lightbox="inline"
                       class="button button-large font-weight-semibold button-rounded ls0 nott ml-0"
                     >
                       Start A Plan
                     </a>
-                   
+
                     <br />
                   </div>
                 </div>
               </div>
             </div>
             <img
-              src="https://cms.com.ng/wp-content/uploads/2015/07/013113-national-money-home-house-family-jappy-parents-homeowner.png"
+              src="/demos/real-estate/images/hero/4.jpg"
               alt=""
               class="slider-img parallax"
               data-start="margin-top: 0px;"
