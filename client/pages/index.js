@@ -354,11 +354,9 @@ const LandingPage = ({ currentuser }) => {
                     <div class="slider-title">
                       <h1 class="font-weight-bold">
                         {' '}
-                        <h1
-                        
-                          style={{ color: '#022b69' }}
-                        >
-                          Housing solution<br/> made easy
+                        <h1 style={{ color: '#022b69' }}>
+                          Housing solution
+                          <br /> made easy
                         </h1>
                       </h1>
                       <h4
@@ -370,13 +368,31 @@ const LandingPage = ({ currentuser }) => {
                         also give loans to cover for housing needs
                       </h4>
                     </div>
-                    <a
+                    {/* <a
                       href="/auth/signin"
                       data-lightbox="inline"
                       class="button button-large font-weight-semibold button-rounded ls0 nott ml-0"
                     >
                       Start A Plan
-                    </a>
+                    </a> */}
+                    <div>
+                      <a href="#">
+                        <img
+                          src="/appstore.png"
+                          alt="Image"
+                          height="54"
+                          class="mt-3"
+                        />
+                      </a>
+                      <a href="#">
+                        <img
+                          src="/googleplay.png"
+                          alt="Image"
+                          class="ml-xl-3 ml-lg-1 mt-3 ml-0 "
+                          height="54"
+                        />
+                      </a>
+                    </div>
 
                     <br />
                   </div>

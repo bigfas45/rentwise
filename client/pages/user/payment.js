@@ -18,16 +18,15 @@ const Payment = ({ currentuser }) => {
   const [refre, setRefre] = useState('');
   const [card, setCard] = useState('');
 
+  const { doRequest2, errors2, loading2 } = useRequest2({
+    url: `/api/orders/card/${currentuser.id}`,
+    method: 'get',
+    body: {},
 
-    const { doRequest2, errors2, loading2 } = useRequest2({
-      url: `/api/orders/card/${currentuser.id}`,
-      method: 'get',
-      body: {},
-
-      onSuccess: (data) => {
-        setCard(data);
-      },
-    });
+    onSuccess: (data) => {
+      setCard(data);
+    },
+  });
 
   useEffect(() => {
     currentuser && currentuser.userType === 0
@@ -55,8 +54,6 @@ const Payment = ({ currentuser }) => {
       Router.push('/user/payment');
     },
   });
-
-
 
   const componentProps = {
     ...config,
@@ -260,6 +257,8 @@ const Payment = ({ currentuser }) => {
       </div>
     );
   };
+
+
 
   return currentuser ? (
     <Fragment>

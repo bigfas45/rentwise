@@ -17,10 +17,10 @@ const Header = ({ currentuser }) => {
               {/* <!-- Logo
 						============================================= --> */}
               <div id="logo">
-                <a href="index.html" className="standard-logo">
+                <a href="/" className="standard-logo">
                   <img src="rentwised.png" alt="Rentwise Logo" />
                 </a>
-                <a href="index.html" className="retina-logo">
+                <a href="i/" className="retina-logo">
                   <img src="rentwised.png" alt="Rentwise Logo" />
                 </a>
               </div>
@@ -35,6 +35,13 @@ const Header = ({ currentuser }) => {
                     <i className="icon-line-cross"></i>
                   </a>
                 </div>
+                {/* <a
+                  href="#modal-register"
+                  data-lightbox="inline"
+                  class="button button-small font-weight-semibold button-border button-rounded ls0 font-weight-medium nott"
+                >
+                  Start A Plan
+                </a> */}
               </div>
 
               <div id="primary-menu-trigger">
@@ -44,6 +51,8 @@ const Header = ({ currentuser }) => {
                   <path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
                 </svg>
               </div>
+
+              
 
               {/* <!-- Primary Navigation
 						============================================= --> */}

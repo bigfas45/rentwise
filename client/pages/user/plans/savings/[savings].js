@@ -255,8 +255,8 @@ const Savings = ({ currentuser, orders }) => {
                       <sup>₦</sup>{' '}
                       <b style={{ fontSize: '25px' }}>
                         {' '}
-                       {(state / 1000) * orders.plan.returnPercentage +
-                          state}{' '} 
+                        {(state / 1000) * orders.plan.returnPercentage +
+                          state}{' '}
                       </b>
                       .00
                     </p>
@@ -369,7 +369,6 @@ const Savings = ({ currentuser, orders }) => {
                       <div class="nk-file-info">
                         <div class="nk-file-title">
                           <div class="nk-file-icon">
-                          
                             <Button
                               variant="outlined"
                               color="secondary"

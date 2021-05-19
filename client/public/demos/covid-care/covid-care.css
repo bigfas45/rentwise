@@ -82,14 +82,12 @@
 
 .section-mobile {
   width: 100%;
-  
-  border-radius: 20px;
  
 }
 
 @media (min-width: 768px) {
   .section-mobile {
-    width: calc(100vw - 60px);
+    width: 100%;
   }
 }
 

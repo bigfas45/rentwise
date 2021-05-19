@@ -22,8 +22,7 @@ import { Spinner } from 'reactstrap';
 
 const SubPlan = ({ currentuser, order }) => {
   const [refre, setRefre] = useState('');
-    const [openCard, setOpenCard] = React.useState(false);
-
+  const [openCard, setOpenCard] = React.useState(false);
 
   const config = {
     reference: refre,
@@ -42,8 +41,7 @@ const SubPlan = ({ currentuser, order }) => {
     },
   });
 
-    const router = useRouter();
-
+  const router = useRouter();
 
   const { doRequest2, errors2, loading2 } = useRequest2({
     url: `/api/orders/addcard`,
@@ -53,12 +51,11 @@ const SubPlan = ({ currentuser, order }) => {
     },
 
     onSuccess: (data) => {
-    
       router.push(
         '/user/subscription/[subscription_user_plan]',
         `/user/subscription/${order.id}`
       );
-        setOpenCard(false);
+      setOpenCard(false);
     },
   });
 
@@ -73,9 +70,6 @@ const SubPlan = ({ currentuser, order }) => {
       null;
     },
   };
-
-
-
 
   const { doRequest, errors, loading } = useRequest({
     url: `/api/subscription/`,
@@ -109,7 +103,6 @@ const SubPlan = ({ currentuser, order }) => {
   const handleClose = () => {
     setOpen(false);
   };
-
 
   const handleClickOpenCard = () => {
     setOpenCard(true);
@@ -350,7 +343,7 @@ const SubPlan = ({ currentuser, order }) => {
                         </DialogTitle>
                         <DialogContent>
                           <DialogContentText id="alert-dialog-description">
-                           Your subscription will be active if you proceed.
+                            Your subscription will be active if you proceed.
                           </DialogContentText>
                         </DialogContent>
                         <DialogActions>

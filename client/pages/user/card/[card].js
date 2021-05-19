@@ -15,7 +15,6 @@ import useRequest2 from '../../../hooks/use-request2';
 const Payment = ({ currentuser, OrderId }) => {
   const router = useRouter();
 
-
   const [refre, setRefre] = useState('');
   const [card, setCard] = useState('');
 
