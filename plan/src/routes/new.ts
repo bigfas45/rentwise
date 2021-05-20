@@ -15,7 +15,7 @@ const router = express.Router();
 router.post(
   '/api/plan',
   requireAuth,
-  
+  requireAuthAdmin,
   [
     body('title').not().isEmpty().withMessage('Title is required'),
     body('description').not().isEmpty().withMessage('Title is required'),
