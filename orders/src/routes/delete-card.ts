@@ -12,17 +12,19 @@ import { OrderCancelledPublisher } from '../events/publishers/order-cancelled-pu
 const router = express.Router();
 
 router.delete(
-  '/api/orders/card/:userId',
+  '/api/orders/card/:reference',
   async (req: Request, res: Response) => {
-    const userId = req.params.userId;
+    const reference = req.params.reference;
     const card = await Card.findOne({
-      userId: userId,
+      reference: reference,
     });
 
     if (!card) {
       throw new NotAuthorizedError();
     }
     await card.remove();
+
+    // 1621523621906 1621523621906
 
     res.send('Card deleted');
   }

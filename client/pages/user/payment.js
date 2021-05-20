@@ -168,7 +168,7 @@ const Payment = ({ currentuser }) => {
                                   {card.authorization.exp_month}/
                                   {card.authorization.exp_year}
                                 </td>
-                                <td>{card.id}</td>
+                                
                               </tr>
                             </tbody>
                           </table>
