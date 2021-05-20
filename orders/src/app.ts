@@ -12,6 +12,7 @@ import {PlanOrderRouter} from './routes/orders-plan'
 import {UserOrderRouter} from './routes/order-users'
 import {addCardRouter} from './routes/add-card'
 import {indexCardsRouter} from './routes/cards'
+import {deleteCardRouter} from './routes/delete-card'
 
 
 const app = express();
@@ -33,7 +34,7 @@ app.use(UserOrderRouter);
 
 app.use(addCardRouter);
 app.use(indexCardsRouter);
-
+app.use(deleteCardRouter);
 
 
 

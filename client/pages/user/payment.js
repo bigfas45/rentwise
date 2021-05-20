@@ -25,6 +25,7 @@ const Payment = ({ currentuser }) => {
 
     onSuccess: (data) => {
       setCard(data);
+      console.log(data)
     },
   });
 
@@ -39,7 +40,7 @@ const Payment = ({ currentuser }) => {
   const config = {
     reference: refre,
     email: currentuser.email,
-    amount: 100 * 100,
+    amount: 10 * 100,
     publicKey: 'pk_live_40d7d6c1c2185ec5b8ffba9bf33aca88110956db',
   };
 
@@ -167,6 +168,7 @@ const Payment = ({ currentuser }) => {
                                   {card.authorization.exp_month}/
                                   {card.authorization.exp_year}
                                 </td>
+                                <td>{card.id}</td>
                               </tr>
                             </tbody>
                           </table>
