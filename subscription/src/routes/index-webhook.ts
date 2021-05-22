@@ -11,7 +11,7 @@ router.get('/api/subscription/webhook/:subscription', requireAuth, async (req: R
    
     let sql = "SELECT * FROM `plan` WHERE `plan`=? AND `status`='success'";
     let query = db.query(sql, [subscription], (err, results) => {
-         db.end();
+        
         if (err || !results) {
             return res.status(400).json({
                 error: 'not found'
@@ -27,5 +27,5 @@ router.get('/api/subscription/webhook/:subscription', requireAuth, async (req: R
 
 
 } );
-
+ db.end();
 export {router as indexWebhookSubRouter }
