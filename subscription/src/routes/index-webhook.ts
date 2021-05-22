@@ -27,5 +27,5 @@ router.get('/api/subscription/webhook/:subscription', requireAuth, async (req: R
 
 
 } );
- db.end();
+
 export {router as indexWebhookSubRouter }
