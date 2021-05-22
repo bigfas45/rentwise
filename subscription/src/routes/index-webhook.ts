@@ -18,6 +18,7 @@ router.get('/api/subscription/webhook/:subscription', requireAuth, async (req: R
         }else{
    res.status(200).send(results);
         }
+        db.end();
     });
    
 
