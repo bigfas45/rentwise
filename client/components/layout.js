@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 const Layout = ({ title = 'Rent Wise', description = 'Description' }) => {
   return (
     <Fragment>
-
       <Head>
         <base href="/" />
 
@@ -31,15 +30,12 @@ const Layout = ({ title = 'Rent Wise', description = 'Description' }) => {
           rel="stylesheet"
           href="/assets/css/theme.css?ver=1.8.0"
         ></link>
-
+        <link rel="stylesheet" href="style.css" type="text/css" />
       </Head>
 
       <Head>
-      
-       <script src="/assets/js/bundle.js?ver=1.8.0"></script>
+        <script src="/assets/js/bundle.js?ver=1.8.0"></script>
         <script src="/assets/js/scripts.js?ver=1.8.0"></script>
-      
-       
       </Head>
     </Fragment>
   );

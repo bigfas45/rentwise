@@ -292,12 +292,11 @@ const SubPlan = ({ currentuser, order }) => {
                         aria-describedby="alert-dialog-description"
                       >
                         <DialogTitle id="alert-dialog-title">
-                          {'Add Card'}
+                          {'Subscription'}
                         </DialogTitle>
                         <DialogContent>
                           <DialogContentText id="alert-dialog-description">
-                            To add and verify your card ₦ 100 will be charged
-                            and saved into your plan
+                            Your subscription will be active if you proceed.
                           </DialogContentText>
                         </DialogContent>
                         <DialogActions>
@@ -343,7 +342,8 @@ const SubPlan = ({ currentuser, order }) => {
                         </DialogTitle>
                         <DialogContent>
                           <DialogContentText id="alert-dialog-description">
-                            Your subscription will be active if you proceed.
+                            To add and verify your card ₦ 100 will be charged
+                            and saved into your plan
                           </DialogContentText>
                         </DialogContent>
                         <DialogActions>

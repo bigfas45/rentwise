@@ -89,7 +89,7 @@ const Signup = () => {
                           placeholder="Enter your lastname"
                         />
                       </div>
-                      <div class="form-group mb-6 col-6">
+                      <div class="form-group mb-6 col-12">
                         <label className="form-label" htmlFor="default-01">
                           Email
                         </label>
@@ -101,7 +101,7 @@ const Signup = () => {
                           placeholder="Enter your email address or username"
                         />
                       </div>
-                      <div class="form-group mb-4 col-6">
+                      <div class="form-group mb-4 col-12">
                         <label className="form-label">Telephone</label>
 
                         <input

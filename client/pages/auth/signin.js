@@ -18,9 +18,9 @@ const Signin = () => {
 
     onSuccess: (user) => {
       if (user.userType === 1) {
-        Router.push('/admin/dashboard');
+        Router.push('/verifications/account-signed');
       } else {
-        Router.push('/user/dashboard');
+        Router.push('/verifications/account-signed');
       }
     },
   });
