@@ -6,10 +6,10 @@ deploy:
       - ./infra/k8s/*
       - ./infra/k8s-dev/*
 build:
-  # local:
-  #   push: false
-  googleCloudBuild:
-    projectId: evident-factor-311915
+  local:
+    push: false
+  # googleCloudBuild:
+  #   projectId: evident-factor-311915
   artifacts:
     - image: dimeji45/auth
       context: auth
