@@ -8,7 +8,7 @@ const buildClient = ({ req }) => {
       // baseURL:
       //   'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
       
-      baseURL: 'http://www.rentwise.ng/',
+      baseURL: 'https://www.rentwise.ng/',
 
       headers: req.headers,
     });
