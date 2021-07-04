@@ -19,7 +19,7 @@ const LandingPage = ({ currentuser }) => {
           <div>
             <div className="clear"></div>
             <div
-              className="section border-0 bg-transparent mb-1"
+              className="section border-0 bg-transparent"
               style={{ marginBottom: '-60px' }}
             >
               <div className="header" style={{ textAlign: 'center' }}>
