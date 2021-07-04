@@ -31,4 +31,3 @@ spec:
               serviceName: client-srv
               servicePort: 3000
 
-
