@@ -22,5 +22,5 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save rentwise
       - run: kubectl rollout restart deployment subscription-depl
-    
+  
 
