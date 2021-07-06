@@ -1,5 +1,4 @@
 name: deploy-client
-
 on:
   push:
     branches:
