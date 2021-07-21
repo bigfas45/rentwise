@@ -6,6 +6,7 @@ const buildClient = ({ req }) => {
 
     return axios.create({
       // baseURL:  'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+      
       baseURL: 'https://www.rentwise.ng/',
       headers: req.headers,
     });

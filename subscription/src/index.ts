@@ -6,7 +6,7 @@ import { OrderCreatedListener } from './events/listeners/order-created-listeners
 import mysql from 'mysql';
 
 const start = async () => {
-  console.log('Starting........................');
+  console.log('Starting.........................');
 
 
 
